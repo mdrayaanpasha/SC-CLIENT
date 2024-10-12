@@ -123,7 +123,7 @@ function Cart() {
         console.log(D)
         //now that the person order i gotta do 2 things - remove all products with these SKUs in their cart, secondly add this in the order model and then redirect to thier order id
         try {
-            const response = axios.post("http://localhost:3000/orderFromCart",{Data:D});
+            const response = axios.post("https://api-sc-pgsn.onrender.com/orderFromCart",{Data:D});
 
         } catch (error) {
          console.log(error)   
