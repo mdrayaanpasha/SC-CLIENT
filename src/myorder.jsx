@@ -166,7 +166,7 @@ function MyOrder() {
                         return (
                             <div key={ele["Order Id"]} className="Product-card">
                                 <img
-                                    src={`https://api-sc-pgsn.onrender.com/public/img/${ele["Product Type"]}/${ele["Product Sub-Type"]}/${ele["Product Sku"]}/main.jpg`}
+                                    src={`https://api-sc-pgsn.onrender.com/public/img/${ele["Product Type"] === "Sofa" ? "sofa" : ele["Product Type"].UpperCase()}/${ele["Product Sub-Type"]}/${ele["Product Sku"]}/main.jpg`}
                                     alt={`Image of ${ele["Product Name"]}`}
                                 />
                                 <div className="des">
