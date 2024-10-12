@@ -36,6 +36,11 @@ function Register() {
     try {
       const response = await axios.post("https://api-sc-pgsn.onrender.com/reg", data);
       console.log(response.data.otp);
+      console.log(response.data);
+      if(response.data.message === "there"){
+        alert("you are already registered to our platform!")
+        window.location.href="./login"
+      }
       setOtp(response.data.otp);
       setForm(false);
     } catch (error) {
@@ -85,20 +90,16 @@ function Register() {
       .div-d{
         display:flex;
         align-items:center;
-        margin-top:5vh;
-        border:1px solid silver;
-        margin-left:15vw;
-        margin-right:15vw;
-        border-radius:2vw;
+        justify-content:space-evenly;
         
 
       }
       .div-d img{
-        width:30vw;
+        width:50vw;
         margin-right:15vw;
         
         border-radius:2vw 0vw 0vw 2vw;
-        height:80vh;
+        height:auto;
         
       }
       h3{
@@ -110,6 +111,9 @@ function Register() {
         color:white;
         margin-bottom:1vh;
       }
+      input{
+      width:40vw;
+      }
       .btn:hover{
         color:#655F7F;
         border:2px solid #655F7F;;
@@ -117,6 +121,9 @@ function Register() {
       .theme{
         color:#655F7F;
       }
+        form{
+        margin-right:3vw;  
+        }
       @media(max-width:1000px){
         .div-d{
           display:block;
@@ -127,6 +134,7 @@ function Register() {
           height:0;
           width:0;
         }
+          
 
       }
       
@@ -182,8 +190,8 @@ function Register() {
             onChange={handleChange} required></textarea>
           </div>
           {message && <p>{message}</p>}
-         <center><input type="submit" className="btn" value="Register" /></center> 
-         <p>Already have an account?<a href="/login">Login</a></p>
+         <center><input type="submit" className="btn" value="Register" />
+         <p>Already have an account?<a href="/login">Login</a></p></center> 
         </form>
         </div>
       ) : (
