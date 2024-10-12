@@ -593,7 +593,7 @@ z-index: 1 !important;
 `}
 </style>
                 
-                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="http://localhost:5173/sfs?sku=SCSO240001"}>
+                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="/sfs?sku=SCSO240001"}>
                     <img src="https://api-sc-pgsn.onrender.com/public/img/sofa/L%20Shape%20Sofa/SCSO240001/main.jpg" className="card-img-top" alt="..." />
                         <div className="card-body">
                         <h5 className="card-title">Arley L Shape Sofa</h5>
@@ -604,7 +604,7 @@ z-index: 1 !important;
                 </div>
 
 
-                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="http://localhost:5173/sfs?sku=SCSO23003BL"}>
+                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="https://api-sc-pgsn.onrender.com/sfs?sku=SCSO23003BL"}>
                     <img src="https://api-sc-pgsn.onrender.com/public/img/sofa/3%20Seater%20Sofa/SCSO23003BL/main.jpg" className="card-img-top" alt="..." />
                         <div className="card-body">
                         <h5 className="card-title">Swank Fabric Sofa</h5>
@@ -617,7 +617,7 @@ z-index: 1 !important;
                     </div>
                 </div>
                 
-                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="http://localhost:5173/sfs?sku=SCSO240003"}>
+                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="https://api-sc-pgsn.onrender.com/sfs?sku=SCSO240003"}>
                     <img src="https://api-sc-pgsn.onrender.com/public/img/sofa/L%20Shape%20Sofa/SCSO240003/main.jpg" className="card-img-top" alt="..." />
                         <div className="card-body">
                         <h5 className="card-title">Emily L Shape Sofa</h5>
@@ -629,7 +629,7 @@ z-index: 1 !important;
 
                 </div>
 
-                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="http://localhost:5173/sfs?sku=SCSO240009CGY"}>
+                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="https://api-sc-pgsn.onrender.com/sfs?sku=SCSO240009CGY"}>
                     <img src="https://api-sc-pgsn.onrender.com/public/img/sofa/3%20Seater%20Sofa/SCSO240008CGY/main.JPG" className="card-img-top" alt="..." />
                         <div className="card-body">
                         <h5 className="card-title">Imperial Leatherette 2 Seater Sofa</h5>
