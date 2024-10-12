@@ -28,6 +28,7 @@ import Failed from "./failed";
 import Admin from "./admin";
 import MyOrder from "./myorder";
 import Payments from "./payments";
+import OrderFail from "./orderfail";
 function App() {
   return (
     <Router >
@@ -58,6 +59,7 @@ function App() {
         <Route path="/X_MIN_DASH" element={<Admin/>}></Route>
         <Route path="/myorders" element={<MyOrder/>}></Route>
         <Route path="/pay" element={<Payments/>}></Route>
+        <Route path="/order-fail" element={<OrderFail/>}></Route>
       </Routes>
     </Router>
   );

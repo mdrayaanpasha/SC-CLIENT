@@ -22,7 +22,8 @@
         { "src": "/failed", "dest": "/" },
         { "src": "/X_MIN_DASH", "dest": "/" },
         { "src": "/myorders", "dest": "/" },
-        { "src": "/pay", "dest": "/" }
+        { "src": "/pay", "dest": "/" },
+        { "src": "/order-fail", "dest": "/" }
       ]
       
   }

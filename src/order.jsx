@@ -218,7 +218,7 @@ function Order(){
                 <>
                 <div className="flex-card">
                     <img 
-src={`https://api-sc-pgsn.onrender.com/public/img/${productInfo[0]["Product Category"]}/${productInfo[0]["Sub Category"]}/${sku}/main.jpg`}
+src={`https://api-sc-pgsn.onrender.com/public/img/${productInfo[0]["Product Category"] === "Sofa" ? productInfo[0]["Product Category"].toLowerCase() : productInfo[0]["Product Category"].toUpperCase()}/${productInfo[0]["Sub Category"]}/${sku}/main.jpg`}
 
                     alt="" />
                     <div className="info">
@@ -236,7 +236,8 @@ src={`https://api-sc-pgsn.onrender.com/public/img/${productInfo[0]["Product Cate
                 <div className="container-cards">
                     <div className="card-c">
                         <h4><i class="fa fa-money"></i>Payments</h4>
-                        <p>please note that only COD is available at the moment.</p>
+                        <p>To Pay Cash-on-delievery press finalize order below</p>
+                        <p>To Pay Online Press <a href="/order-fail">here</a></p>
                     </div>
                     <div className="card-c"><h4>
                     <i class="fa fa-address-card-o"></i>
