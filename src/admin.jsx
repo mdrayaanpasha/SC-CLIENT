@@ -313,6 +313,8 @@ function Admin() {
                 <th>Product Image</th>
                 <th>Product Sku</th>
                 <th>Product Name</th>
+                <th>Product Quantity</th>
+
                 <th>Product Price</th>
                 <th>Delete</th>
               </tr>
@@ -327,10 +329,11 @@ function Admin() {
                   <td>{order["Costumer Id"]}</td>
                   <td>{order["Costumer Adress"]}</td>
                   <td><img 
-                    src={`https://api-sc-pgsn.onrender.com/public/img/${order["Product Type"]}/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
+                    src={`https://api-sc-pgsn.onrender.com/public/img/${order["Product Type"] === "Sofa" ? "sofa" : order["Product Type"].toUpperCase() }/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
                     alt="" /></td>
                   <td>{order["Product Sku"]}</td>
                   <td>{order["Product Name"]}</td>
+                  <td>{order["Product Quantity"] ? order["Product Quantity"] : 1}</td>
                   <td>{formatter.format(order["Product Price"])}</td>
                   <td style={{color:"red",cursor:"pointer"}} onClick={() => delOrder(order._id)}><i className="material-icons">delete</i></td>
                 </tr>
@@ -378,7 +381,7 @@ function Admin() {
                   <td>{order["Costumer Adress"]}</td>
                   <td>{order["Product Name"]}</td>
                   <td><img 
-                    src={`https://api-sc-pgsn.onrender.com/public/img/${order["Product Type"]}/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
+                    src={`https://api-sc-pgsn.onrender.com/public/img/${order["Product Type"] === "Sofa" ? "sofa" : order["Product Type"].toUpperCase() }/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
                     alt="" /></td>
                   <td>{formatter.format(order["Product Price"])}</td>
                   <td style={{color:"red",cursor:"pointer"}} onClick={() => delCancel(order._id)}><i className="material-icons">delete</i></td>

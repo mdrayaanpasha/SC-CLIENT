@@ -117,10 +117,17 @@ function Cart() {
     const handleOrder = () => {
         const D = {
             Email: email,
-            Skus: SKus,
+            ProductData:Data,
             quantities: quantities
         };
-        console.log(D);
+        console.log(D)
+        //now that the person order i gotta do 2 things - remove all products with these SKUs in their cart, secondly add this in the order model and then redirect to thier order id
+        try {
+            const response = axios.post("http://localhost:3000/orderFromCart",{Data:D});
+
+        } catch (error) {
+         console.log(error)   
+        }
     };
 
     const delcart = (sku) => {
@@ -355,14 +362,14 @@ function Cart() {
                             </>
                     }
                     {email && Data.map(ele => (
-                        <div key={ele.Sku} className="flex" onClick={e=>window.location.href=`/${ele["url"]}?sku=${ele["Sku"]}`}>
-                            <img src={`https://api-sc-pgsn.onrender.com/public/img/${ele["Product Category"]}/${ele["Sub Category"]}/${ele["Sku"]}/main.jpg`} alt="Product" />
+                        <div key={ele.Sku} className="flex">
+                            <img src={`https://api-sc-pgsn.onrender.com/public/img/${ele["Product Category"] === "Sofa" ? "sofa" : "SR"}/${ele["Sub Category"]}/${ele["Sku"]}/main.jpg`} alt="Product" onClick={e=>window.location.href=`/${ele["url"]}?sku=${ele["Sku"]}`}/>
                             <div className="info">
                                 <div dir="rtl">
                                     <i className="material-icons icon" onClick={() => delcart(ele.Sku)}>delete</i>
                                 </div>
                                 <div className="main">
-                                    <p>{ele["Title"]}</p>
+                                    <p onClick={e=>window.location.href=`/${ele["url"]}?sku=${ele["Sku"]}`}>{ele["Title"]}</p>
                                     <p><s>{formatter.format(ele["Mrp "])}</s> {formatter.format(ele["Selling Price "])}</p>
                                     <button onClick={() => handleDecrement(ele.Sku)} className="btn btn-danger dec">-</button>
                                     <input

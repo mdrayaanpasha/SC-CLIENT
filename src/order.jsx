@@ -88,6 +88,7 @@ function Order(){
             "Product Sku" : productInfo[0].Sku,
             "Product Type":productInfo[0]["Product Category"],
             "Product Sub-Type":productInfo[0]["Sub Category"],
+             'Product Quantity':1,
 "Order Date": new Date().toISOString(),
 "Admin":true
         }
