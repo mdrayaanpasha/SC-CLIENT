@@ -786,7 +786,15 @@ function Sf() {
                      .flex-dia img{
                     height:10vh;
                     width:auto;
+                    
                 }
+                    .navbar{
+                        width:99vw;
+                        padding:0;
+                    }
+                    .container-fluid{
+                    width:100%;
+                    }
 
                     }
                 

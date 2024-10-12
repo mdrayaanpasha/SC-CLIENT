@@ -918,6 +918,14 @@ function SR() {
                 @media(max-width:700px){
                     button{
                         padding:2vw;
+                        height:5vh;
+                    }
+                    .navbar{
+                        width:99vw;
+                        padding:0;
+                    }
+                    .container-fluid{
+                    width:100%;
                     }
                    
                        
