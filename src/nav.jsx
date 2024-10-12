@@ -102,10 +102,13 @@ const Nav = () => {
                 <a className="dropdown-item" href="/sofas/LShaped"> L Shaped </a>
               </li>
               <li>
+                <a className="dropdown-item" href="/sofas/storageBench"> Storage Bench </a>
+              </li>
+              <li>
                 <hr className="dropdown-divider" />
               </li>
               <li>
-                <a className="dropdown-item" href="/sofas/storageBench"> Storage Bench </a>
+                <a className="dropdown-item" href="/sofas">See all</a>
               </li>
             </ul>
           </li>
@@ -120,6 +123,12 @@ const Nav = () => {
               </li>
               <li>
                 <a className="dropdown-item" href="/shoeracks/bench"> Shoe Rack With Bench </a>
+              </li>
+              <li>
+                <hr className="dropdown-divider" />
+              </li>
+              <li>
+                <a className="dropdown-item" href="/shoeracks">See all</a>
               </li>
             </ul>
           </li>
