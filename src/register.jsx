@@ -202,7 +202,7 @@ function Register() {
           </div>
           <form onSubmit={verifyOtp}>
           <div class="mb-3">
-            <label for="otp" className="form-label">Enter OTP: </label>
+            <label for="otp" className="form-label">Enter OTP (find it in your email): </label>
             <input type="number" name="otp" className="form-control" required />
           </div>
           {message && <p>{message}</p>}

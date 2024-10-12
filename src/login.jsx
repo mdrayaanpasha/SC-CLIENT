@@ -43,42 +43,42 @@ function Login() {
     <>
     <style>
       {`
-      .div-d{
+       .div-d{
         display:flex;
         align-items:center;
-        margin-top:5vh;
-        border:1px solid silver;
-        margin-left:15vw;
-        margin-right:15vw;
-        border-radius:2vw;
+        justify-content:space-evenly;
+        
 
       }
       .div-d img{
-        width:30vw;
+        width:50vw;
         margin-right:15vw;
         
         border-radius:2vw 0vw 0vw 2vw;
-        height:80vh;
+        height:auto;
+        
       }
       h3{
         margin-bottom:3vh;
       }
       .btn{
-        background-color:#655F7F;;
-        box-shadow: 5px 5px 15px #655F7F;;
+        background-color:#655F7F;
+        box-shadow: 5px 5px 15px #655F7F;
         color:white;
         margin-bottom:1vh;
       }
+      input{
+      width:40vw;
+      }
       .btn:hover{
-        color:#655F7F;;
+        color:#655F7F;
         border:2px solid #655F7F;;
       }
       .theme{
         color:#655F7F;
       }
-        a{
-        color:#655F7F;
-      
+        form{
+        margin-right:3vw;  
         }
       @media(max-width:1000px){
         .div-d{
