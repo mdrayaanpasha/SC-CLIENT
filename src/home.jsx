@@ -1,18 +1,72 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./index.css";
 
-import sofa from "./sofa-cat.jpg";
-import bed from "./beds.jpg";
-import dining from "./dining-cat.jpg";
-import why from "./why-us.jpg";
-import factory from "./facto.jpg";
-import shoe from "./img/sr-cat/seat-sr.jpg"
-import mainPhone from "./main-phone.png";
+import sofa from "./img/icons/sofa.png";
+import bed from "./img/icons/beds.png";
+import dining from "./img/icons/dining-table.png";
+import why from "./why.jpeg";
+import factory from "./why.jpeg";
+import shoe from "./img/icons/shoe-rack.png"
+
 import mainthing from "./thingthing.jpg";
 import Nav from './nav';
 
 
+import trending from "./theCover.jpg"
+
+import o from "./img/car/1.png";
+import t from "./img/car/2.png";
+import th from "./img/car/3.png";
+
+import mainVid from "./videos/main.mp4"
+import mainPhone from "./img/home/homemain.mp4" 
+
+import sofaban from "./img/home/sofas.mp4"
+import bedban from "./img/home/beds.mp4"
+import shoerackban from "./img/home/storage.mp4"
+import diningban from "./img/home/dining.mp4"
+import axios from 'axios';
+import viewAll from "./sofa-cat.jpg"
+
 function Home() {
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'INR'
+    });
+    const [RandomData,setRandomData]=useState(null)
+    useEffect(()=>{
+        const randomFetching = async()=>{
+            try {
+                const D = await axios.get("https://api-sc-pgsn.onrender.com/randomhome");
+                if(D.data.message==="ok"){
+                    setRandomData(D.data.Da)
+                }else{
+                    alert("there is an error in backend!")
+                }
+            } catch (error) {
+                alert("there  is an error in reat")
+                console.log(error)
+            }
+        }
+        randomFetching()
+
+
+    },[])
+
+    useEffect(()=>{
+        if(RandomData){
+            let Data= RandomData
+            Data.forEach(element => {
+                if(element["Product Category"]==="SR"){
+                    element["Redirect"]=`/sr?sku=${element["Sku"]}`
+                }else{
+                    element["Redirect"]=`/sfs?sku=${element["Sku"]}`
+                }
+            });
+
+            setRandomData(Data)
+        }
+    },[RandomData])
    
     return (
         <>
@@ -33,14 +87,27 @@ function Home() {
                     height: 95vh;
                     margin-bottom: 5vh;
                     background-color: #f8f7f2;
-                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+                   
                 }
-                main img {
+                #vid-main-pc {
                     height: auto;
                     width: auto;
-                    max-height: 100%;
+
+                    max-height: 90%;
                     max-width: 100%;
+                    border:0px;
                     
+                }
+                #vid-main-pc img{
+                height:95vh;
+                width:auto;
+                }
+                #vid-main-phone{
+                    height:0;
+                    width:0;
+                }
+                #vid-main-pc:hover{
+                    border:0px;
                 }
                 #cat {
                     margin-top: 10vh;
@@ -50,15 +117,16 @@ function Home() {
                 .category {
                     display: flex;
                     align-items: center;
-                    justify-content: space-evenly;
-                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    flex-wrap: nowrap;
+                    overflow:auto;
                 }
 
                 .category img {
                     height: 30vh;
                     width: 15vw !important;
                     border-radius: 5%;
-                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+                   margin-right:5vw;
                     transition: transform 0.3s ease-in-out;
                 }
 
@@ -71,20 +139,7 @@ function Home() {
                 }
 
                 /* Why Us Section Styles */
-                .why-us {
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-                    color: silver;
-                    padding: 4vw;
-                }
-
-                .why-us img {
-                    height: 60vh;
-                    width: 30vw;
-                    border-radius: 5%;
-                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-                }
+          
 
                 #phone-img {
                     display: none;
@@ -102,12 +157,16 @@ function Home() {
                 }
 
                 .theme {
-                    color: #82C2C9;
+                    color: #655F7F;;
                     font-weight: bold;
+                    
+                }
+                .mar{
+                    margin:3vw;
                 }
 
                 #btn-thing {
-                    background-color: #82C2C9;
+                    background-color: #4A4270;
                     color: white;
                     width: 15vw;
                 }
@@ -123,7 +182,7 @@ function Home() {
 
                 /* Footer Styles */
                 footer {
-                    background-color: #82C2C9 !important;
+                    background-color: #4A4270 !important;
                 }
 
                 #logo {
@@ -141,9 +200,19 @@ function Home() {
                     .para {
                         font-size: 1vh !important;
                     }
+                    .d-block, .w-100{
+                    height:80vh !important;
+                    }
+                    .carousel img, .carousel-inner, .carousel-inner img, .carousel-item, .carousel-item img, .carousel-item img, #vid-main-pc , #vid-main-pc img, #carouselExampleFade{
+                    height:80vh !important;
+                    }
 
                     .category img {
                         height: 20vh;
+                    }
+                    
+                    .main-theme{
+                    margin-top:10vh;
                     }
                 }
 
@@ -165,6 +234,13 @@ function Home() {
 
                     .para {
                         margin-top: 4vh;
+                    }
+                    .main-theme{
+                    font-size:6vh !important;
+                    }
+                    .main-theme-p{
+                    font-size:2vh !important;
+                    
                     }
                 }
 
@@ -196,14 +272,26 @@ function Home() {
                         width: 70vw;
                         margin-left: 15%;
                     }
-
-                    main {
-                        background: #EFE8DC;
+                   #vid-main-phone{
+                        
+                        height: auto;
+                        width: auto;
+                        max-height: 100%;
+                        max-width: 100%;  
                     }
-
-                    main img {
-                        display: none;
+                    #vid-main-pc{
+                        height:0;
+                        width:0;
                     }
+                    main{
+                        box-shadow:none;
+                    }
+                    .carousel{
+                     display:none;
+                    }
+                   
+
+                   
 
                     #phone-img {
                         display: block;
@@ -211,6 +299,14 @@ function Home() {
 
                     .category img {
                         width: 30vw;
+                    }
+
+                     .main-theme{
+                    font-size:4vh !important;
+                    }
+                    .main-theme-p{
+                    font-size:1.3vh !important;
+                    
                     }
                 }
 
@@ -233,6 +329,19 @@ function Home() {
                     .para {
                         font-size: 1px !important;
                     }
+                    .random video{
+                    margin:0 !important;
+                    margin-bottom:2vh !important;
+                    }
+                    .category img{
+                    height:15vh !important;
+                    width:25vw !important;
+                    }
+                    .btn{
+                    padding:1vw;
+                    font-size:2vh;
+                    margin-top:2vh;
+                    }
                 }
 
                 @media (max-width: 300px) {
@@ -246,17 +355,141 @@ function Home() {
                         height: 62vh !important;
                     }
                 }
-                `}
+                s, p b{
+                    color:silver;
+                }
+                .card .btn{
+                    background-color:#4A4270;
+                    color:white;
+                    border:none;
+                    
+                }
+                .card{
+                    margin:2vw;
+                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+                }
+                .latest-collection{
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-around;
+                    flex-wrap:wrap;
+                }
+                body{
+                    background-color: #f8f7f2;
+                }
+                .card:hover {
+                    transition: all 0.5s ease-in-out; transform: scale(1.1); 
+
+                  }
+
+                 .random{
+                    display:flex;
+                    flex-wrap:wrap;
+                    align-items:center;
+                    justify-content:space-around;
+                 } 
+                 .random video{
+                    width:40vw;
+                    margin:5vh;
+                 
+                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+                 }
+                 @media(max-width:500px){
+                    body{
+                        overflow-x:hidden;
+                    }
+                    .random video{
+                        width:90vw;
+                     }
+                        h1{
+                        fontSize:5vh;
+                        }
+                 }
+                
+              
+                .spotlight{
+                display:flex;
+                flex-wrap:no-wrap;
+                overflow-x:auto;
+                align-items:center;
+                justify-content:space-evenly;
+                
+                
+
+                }
+                .card{
+                margin:2vw
+                }
+                .spotlight .card{
+flex: 0 0 auto;
+                    width:auto;
+                }
+                .carousel-control-prev-icon {
+                        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+                    }
+                    .carousel-control-next-icon {
+                        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+                        transform: scaleX(-1);
+                    }
+
+                .carousel, .carousel img, main{
+                // margin-top:5vh;
+                height:110vh;
+                object-contain:cover;
+                width:98vw;
+               margin:0;
+               padding:0;
+                }
+               body{
+               scroll-behaviour:smooth;
+               }
+                `
+            
+                }
+
             </style>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
             <Nav />
             <center>
+                
                 <main>
-                    <img src={mainthing} alt="" />
-                    <img src={mainPhone} alt="" id='phone-img' />
+                <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                    <div class="carousel-inner" id='vid-main-pc'>
+                        <div class="carousel-item active">
+                        <img src={o} class="d-block w-100" alt="..." />
+                        </div>
+                        <div class="carousel-item">
+                        <img src={t} class="d-block w-100" alt="..." />
+                        </div>
+                        <div class="carousel-item">
+                        <img src={th} class="d-block w-100" alt="..." />
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
+                
+                    <video id='vid-main-phone' src={mainPhone} autoPlay muted />
                 </main>
             </center>
-            <div className="theme"><h4>What are you looking for?</h4></div>
-            <div className="category">
+            
+        <hr />
+
+<div className="div">
+
+<center>
+            
+        <h1 style={{fontSize:"10vh", fontWeight:"bolder", color:"#676186"}} className='main-theme'>Uncover Your Perfect Style!</h1>
+    <p style={{color:"#676186"}} className='main-theme-p'>Discover a spectrum of furniture categories designed to resonate with your distinct aesthetic. Whether you're drawn to minimalist chic or bold statement pieces.</p>
+    </center>
+            </div>
+            <div className="category" style={{padding:"2vw"}}>
                 <div className="c">
                     <img src={sofa} alt="Sofa" onClick={e => window.location.href = "/sofas"} />
                     <center><p>Sofa</p></center>
@@ -274,21 +507,209 @@ function Home() {
                     <center><p>Shoe Racks</p></center>
                 </div>
             </div>
-            <hr />
-            <div className="theme"><h4 className="padd">Why Us?</h4></div>
-            <div className="why-us">
-                <img src={factory} alt="Factory" />
-                <div className="para">
-                    <center>
-                        <p>We are a <span className="theme">premier</span> furniture manufacturer and supplier, partnering with <span className="theme">leading</span> retail stores across India. Renowned for our <span className="theme">quality</span>
-                        and <span className="theme">innovation</span>, we are a <span className="theme">top-performing</span> brand on popular online furniture portals such as <span className="theme">Peperfry</span> and <span className="theme">Urban Ladder.</span> Our commitment to excellence and <span className="theme">customer satisfaction</span> sets us apart in the industry.</p>
-                    </center>
+            <center>
+                <hr style={{marginTop:"5vh"}}/>
+            
+        <h1 style={{fontSize:"10vh", fontWeight:"bolder", color:"#676186"}} className="main-theme">Spotlight on Timeless Elegance!</h1>
+    <p style={{color:"#676186"}} className="main-theme-p">Step into a realm of timeless elegance with our handpicked spotlights, showcasing furniture pieces that epitomize sophistication and enduring style.</p>
+    <div className="flex-c-o" style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>
+        <p></p>
+        <p style={{color:"#676186",fontSize:"3vh", marginRight:"3vw"}}>Scroll &rarr;</p>
+    </div>
+    </center>
+            <div className="spotlight" style={{position: "relative"}} >
+            <h3 style={{position:"absolute",right:"0",}}>Slide &#8594; </h3>
+                {RandomData && RandomData.map(element => (
+                    <div className="card" style={{ width: "18rem" }}>
+                   <img className="thing" src={`https://api-sc-pgsn.onrender.com/public/img/${element["Product Category"] === "Sofa" ? element["Product Category"].toLowerCase() : element["Product Category"].toUpperCase() }/${element["Sub Category"]}/${element["Sku"]}/main.jpg`} alt={element["Title"]}onClick={e=>window.location.href=element["Redirect"]}></img>
+                   
                 </div>
+                ))}
+                <h3 style={{color: '#4A4270', cursor:"pointer" }} onClick={e=>window.location.href="/spotlights"}>
+                    View All &#8594;
+                </h3>
+                
             </div>
-            <hr />
+            
+            <center>
+                <hr style={{marginTop:"5vh", }}/>
+            
+        <h1 style={{fontSize:"10vh", fontWeight:"bolder", color:"#676186"}} className="main-theme">Discover Our Top Picks!</h1>
+    <p style={{color:"#676186"}} className="main-theme-p">Explore our handpicked selection of trending furniture pieces. From timeless classics to contemporary marvels, find the perfect addition to your home.</p>
+    </center>
+    
+            <div className="random" style={{backgroundColor:"#F8F7F2"}}>
+            <video src={sofaban} autoPlay muted loop  onClick={e=>window.location.href="/sofas"} style={{cursor:"pointer"}} ></video>
+            <video src={diningban} autoPlay muted loop  onClick={e=>window.location.href="/"} style={{cursor:"pointer"}}></video>
+            <video src={bedban} autoPlay muted loop style={{cursor:"pointer"}}></video>
+            <video src={shoerackban} autoPlay loop muted onClick={e=>window.location.href="/shoeracks"} style={{cursor:"pointer"}}></video>
+        </div>
+        
+        <hr />
+
+
+        <center>
+                
+            
+        <h1 style={{fontSize:"10vh", fontWeight:"bolder", color:"#676186"}} className="main-theme">Discover Our Latest Arrivals</h1>
+    <p style={{color:"#676186"}} className="main-theme-p">Explore our newest arrivals, where style meets innovation. From modern marvels to timeless classics.</p>
+    </center>
+            <style>
+                {
+                    `
+                    .latest-collection .card{
+                        border:none;
+                        box-shadow:none;
+                        background-color:#F8F7F2;
+                    
+                    }
+                    .latest-collection .card img, .latest-collection .card{
+                        border-radius:1vw;
+                    }
+                    .latest-collection .card:hover{
+                    
+                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+                    }
+
+                    `
+                }
+            </style>
+            <div className="latest-collection" style={{padding:"2vw"}}>
+                
+            <style>
+
+{`
+.latest-collection .card{
+background: rgba(255, 255, 255, 0.2) !important; /* Semi-transparent background */
+backdrop-filter: blur(10px) !important; /* Glass effect */
+-webkit-backdrop-filter: blur(10px) !important; /* For Safari support */
+border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Optional: border to enhance glass effect */
+border-radius: 10px; /* Optional: rounded corners */
+margin: 10px; /* Optional: space around the nav */
+position: relative !important; /* Ensure proper positioning */
+z-index: 1 !important;
+}
+
+`}
+</style>
+                
+                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="http://localhost:5173/sfs?sku=SCSO240001"}>
+                    <img src="https://api-sc-pgsn.onrender.com/public/img/sofa/L%20Shape%20Sofa/SCSO240001/main.jpg" className="card-img-top" alt="..." />
+                        <div className="card-body">
+                        <h5 className="card-title">Arley L Shape Sofa</h5>
+                        <p><b style={{color:"#4A4270"}}>L Shaped Sofa</b></p>
+                        <hr />
+                        <p className="card-text"><s>{formatter.format(49999)}</s> {formatter.format(39999)} <span style={{ color: "green" }}>Save 25%</span></p>
+                    </div>
+                </div>
+
+
+                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="http://localhost:5173/sfs?sku=SCSO23003BL"}>
+                    <img src="https://api-sc-pgsn.onrender.com/public/img/sofa/3%20Seater%20Sofa/SCSO23003BL/main.jpg" className="card-img-top" alt="..." />
+                        <div className="card-body">
+                        <h5 className="card-title">Swank Fabric Sofa</h5>
+                        <p><b style={{color:"#4A4270"}}>3 Seater Sofa</b></p>
+                        <hr />
+                        <p className="card-text"><s>{formatter.format(24999)}</s> {formatter.format(19999)} <span style={{ color: "green" }}>Save 25%</span></p>
+                        
+
+                   
+                    </div>
+                </div>
+                
+                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="http://localhost:5173/sfs?sku=SCSO240003"}>
+                    <img src="https://api-sc-pgsn.onrender.com/public/img/sofa/L%20Shape%20Sofa/SCSO240003/main.jpg" className="card-img-top" alt="..." />
+                        <div className="card-body">
+                        <h5 className="card-title">Emily L Shape Sofa</h5>
+                        <p><b style={{color:"#4A4270"}}>L Shaped Sofa</b></p>
+                        <hr />
+                    </div>
+                    <p className="card-text"><s>{formatter.format(58749)}</s> {formatter.format(46999)} <span style={{ color: "green" }}>Save 25%</span></p>
+
+
+                </div>
+
+                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="http://localhost:5173/sfs?sku=SCSO240009CGY"}>
+                    <img src="https://api-sc-pgsn.onrender.com/public/img/sofa/3%20Seater%20Sofa/SCSO240008CGY/main.JPG" className="card-img-top" alt="..." />
+                        <div className="card-body">
+                        <h5 className="card-title">Imperial Leatherette 2 Seater Sofa</h5>
+                        <p><b style={{color:"#4A4270"}}>3 Seater Sofa</b></p>
+                        <hr />
+                        <p className="card-text"><s>{formatter.format(58749)}</s> {formatter.format(46999)} <span style={{ color: "green" }}>Save 25%</span></p>
+                    </div>
+                </div>
+
+              
+            
+            
+            
+            </div>
+            
+
+<hr />
+<style>
+    {`
+    .btn{
+    border:2px solid #ffff;
+    color:#ffff;
+    margin-right:2vw;    
+
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.1); /* Black w/opacity/see-through */
+    
+    }
+    .btn:hover{
+    background-color:#ffff;
+    color:none;
+    opacity:1.0;
+    
+
+    }
+    .trending img{
+    object-fit:contain;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2), 
+              0px 10px 20px rgba(0,0,0,0.3), 
+              0px 20px 30px rgba(0,0,0,0.4);
+
+    height:95vh !important;
+    width:auto;
+    border-radius:1vw;
+    
+    }
+    
+    `}
+</style>
+<div className="trending">
+    <center>
+        <img src={trending} alt="" />
+    <h1 style={{fontSize:"10vh", fontWeight:"bolder", color:"#676186"}} className="main-theme">MUST HAVE STYLES!</h1>
+    <p style={{color:"#676186"}} className="main-theme-p">Discover what's making waves in home decor. Our trending section brings you the most sought-after pieces that blend style, comfort, and functionality effortlessly.</p>
+    </center>
+</div>
+<hr /> 
+
+<div className="" style={{ backgroundImage: `url(${factory})`, opacity:"0.8", backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor:"rgba(0,0,0)",backgroundColor:"rgba(0,0,0, 0.4)", }}>
+      <center>
+        
+        {/* <img src={factory} alt="" style={{ height: "80vh" }} /> */}
+        <h1 style={{ fontSize: "10vh", fontWeight: "bolder",color:"#fff", paddingTop:"10%" }} className='main-theme'>WHY CHOOSE US?</h1>
+        <p style={{ color: "#fff" } } className="main-theme-p">We're a top-rated furniture manufacturer renowned for our superior craftsmanship and high-quality products. With top sales on platforms like Pepperfry, our commitment to excellence ensures you get the best in durability, style, and customer satisfaction.</p>
+        <div className="di" style={{paddingBottom:"10%"}}>
+        <button class="btn">Shop Sofas</button>
+        <button class="btn">Shop ShoeRacks</button>
+        <button class="btn">Shop Beds</button>
+        <button class="btn">Shop Dining</button>
+        </div>
+      </center >
+      
+    </div>
+    <hr />
+
+
+           
             
             <div className="contact">
-                <div className="theme"><h4 className="padd">Contact Us!</h4></div>
+                <h2 className="theme mar">Contact Us! </h2>
                 <form>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>

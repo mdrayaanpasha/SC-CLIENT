@@ -34,7 +34,7 @@ function Register() {
     };
 
     try {
-      const response = await axios.post("http://localhost:3000/reg", data);
+      const response = await axios.post("https://api-sc-pgsn.onrender.com/reg", data);
       console.log(response.data.otp);
       setOtp(response.data.otp);
       setForm(false);
@@ -58,7 +58,7 @@ function Register() {
         password:formData.password
       };
       try {
-        const R = await axios.post("http://localhost:3000/confirmReg",data);
+        const R = await axios.post("https://api-sc-pgsn.onrender.com/confirmReg",data);
         if(R.data.message === "done"){
           localStorage.setItem("D",formData.email)
           const redirectURL = localStorage.getItem("redirect");
@@ -105,17 +105,17 @@ function Register() {
         margin-bottom:3vh;
       }
       .btn{
-        background-color:#82C2C9;
-        box-shadow: 5px 5px 15px #82C2C9;
+        background-color:#655F7F;
+        box-shadow: 5px 5px 15px #655F7F;
         color:white;
         margin-bottom:1vh;
       }
       .btn:hover{
-        color:#82C2C9;
-        border:2px solid #82C2C9;
+        color:#655F7F;
+        border:2px solid #655F7F;;
       }
       .theme{
-        color:#82C2C9;
+        color:#655F7F;
       }
       @media(max-width:1000px){
         .div-d{

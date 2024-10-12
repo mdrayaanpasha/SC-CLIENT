@@ -16,7 +16,7 @@ function Login() {
 
     try {
         const E=email.toLowerCase()
-        const R = await axios.post("http://localhost:3000/login",{Email:E,Password:password});
+        const R = await axios.post("https://api-sc-pgsn.onrender.com/login",{Email:E,Password:password});
         if(R.data.message==="Pass"){
             const E = email.toLowerCase()
             localStorage.setItem("D",E)
@@ -64,18 +64,22 @@ function Login() {
         margin-bottom:3vh;
       }
       .btn{
-        background-color:#82C2C9;
-        box-shadow: 5px 5px 15px #82C2C9;
+        background-color:#655F7F;;
+        box-shadow: 5px 5px 15px #655F7F;;
         color:white;
         margin-bottom:1vh;
       }
       .btn:hover{
-        color:#82C2C9;
-        border:2px solid #82C2C9;
+        color:#655F7F;;
+        border:2px solid #655F7F;;
       }
       .theme{
-        color:#82C2C9;
+        color:#655F7F;
       }
+        a{
+        color:#655F7F;
+      
+        }
       @media(max-width:1000px){
         .div-d{
           display:block;
@@ -86,6 +90,7 @@ function Login() {
           height:0;
           width:0;
         }
+          
 
       }
       

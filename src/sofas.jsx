@@ -10,14 +10,16 @@ import bench from "./img/sofa-cat/sofa-cat-bench.jpg"
 
 function Sofas() {
 
-    const string = "http://localhost:3000/public/img/sofa/1 Seater Sofa/SCSO23004BL/main.jpg"
+    const string = "https://api-sc-pgsn.onrender.com/public/img/sofa/1 Seater Sofa/SCSO23004BL/main.jpg"
     const thing = string.replace(" ","%20")
-    const [sofa,setSofas] = useState(null)
+    const [Sofa,setSofas] = useState(null)
+    const [UpdatedSofa,setUpdatedSofa]=useState(null)
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:3000/getSofas");
-                setSofas(response.data.S); // Update state with fetched data
+                const response = await axios.get("https://api-sc-pgsn.onrender.com/getSofas");
+                setSofas(response.data.S); // Update state with fetched data\
+
             } catch (error) {
                 console.log(error);
                 alert("There was an error fetching data from the backend");
@@ -26,10 +28,44 @@ function Sofas() {
     
         fetchData();
     }, []);
-    const se = (sku)=>{
-        window.location.href=`/sofa?sku=${sku}`
-    }
 
+    useEffect(() => {
+        if (Sofa && Sofa.length > 0) {
+            // Update titles of sofas to capitalize the first letter of each word
+            let updatedSofa = Sofa.map(ele => {
+                let title = ele["Title"];
+                if (title !== undefined){
+                    let words = title.split(" ");
+                
+                
+                
+
+                
+                for (let i = 0; i < words.length; i++) {
+                    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+                }
+                // Join the words back into a single string
+                let Fin = words.join(" ");
+
+                let fin = Fin.split("In")
+
+
+
+                ele["Title"]=fin[0]
+                return ele
+            }
+            });
+            setUpdatedSofa(updatedSofa);
+        }
+    }, [Sofa]);
+    
+    const se = (sku)=>{
+        window.location.href=`/sfs?sku=${sku}`
+    }
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'INR'
+    });
     
     return (
         <>
@@ -77,7 +113,7 @@ function Sofas() {
                 justify-content:space-evenly;
             }
             .theme {
-                color: #82C2C9;
+                color:#655F7F;
                 font-weight: bold;
                 padding:2vw;
             }
@@ -115,6 +151,12 @@ function Sofas() {
                     flex-wrap:wrap;
                 }
                 
+            }
+            s{
+                color:grey;
+            }
+            .off{
+                color:green;
             }
             
             @media(max-width:400px){
@@ -164,34 +206,36 @@ function Sofas() {
             
         </div>
         <hr />
-        <h4 className="theme">Sofas By SolaceCraft</h4>
+        <h4 className="theme">Sofas By SolaceCraft 🛋️</h4>
         <div>
             
-        {sofa ? (
-            <div className="flex-div">
-                {sofa.map((ele, index) => (
-    <div key={index} className="card" style={{ width: "18rem" }} onClick={e=>se(ele.Sku)}>
-        <img
-            src={`http://localhost:3000/public/img/sofa/${ele["Sub Category"].replace(' ', '%20')}/${ele["Sku"]}/main.jpg`}
-            alt={ele.Title}
-            className="card-img-top"
-        />
-        <div className="card-body">
-            <h5 className="card-title">{ele.Title}</h5>
-            <small className="silver">{ele["Sub Category"]}</small>
-            <hr />
-
-            <p className="card-text">₹ {ele["Mrp "]}</p>
-            
-        </div>
+        
+{UpdatedSofa ? (
+    <div className="flex-div">
+        {UpdatedSofa.map((ele, index) => (
+            ele !== undefined ? (
+                <div key={index} className="card" style={{ width: "18rem" }} onClick={() => se(ele.Sku)}>
+                    <img
+                        src={`https://api-sc-pgsn.onrender.com/public/img/sofa/${ele["Sub Category"].replace(" ", "%20")}/${ele.Sku}/main.jpg`}
+                        alt={ele.Title}
+                        className="card-img-top"
+                    />
+                    <div className="card-body">
+                        <h5 className="card-title">{ele.Title}</h5>
+                        <small className="silver">{ele["Sub Category"]}</small>
+                        <hr />
+                        <p className="card-text">
+                            <s>{formatter.format(ele["Mrp "])}</s> {formatter.format(ele["Selling Price "])} <span className="off">Save 25%</span>
+                        </p>
+                    </div>
+                </div>
+            ) : null
+        ))}
     </div>
-))}
+) : null}
 
-            </div>
-        ) : (
-            <p>Loading...</p>
-        )}
-    </div>
+</div>
+       
     </>
     )
 }

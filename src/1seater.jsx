@@ -3,12 +3,16 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 
 function Seat1(){
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'INR'
+    });
     const [data,setData]=useState(null)
 
     useEffect(()=>{
         const fetchD = async()=>{
             try {
-                const d = await axios.get("http://localhost:3000/1seatget");
+                const d = await axios.get("https://api-sc-pgsn.onrender.com/1seatget");
                 if(d.data.message==="ok"){
                     setData(d.data.Data)
                 }else{
@@ -38,7 +42,7 @@ function Seat1(){
                 justify-content:space-around;
             }
             .theme {
-                color: #82C2C9;
+                color: #655F7F;
                 font-weight: bold;
                 padding:2vw;
             }
@@ -61,9 +65,9 @@ function Seat1(){
         <div className="products">
         {data && data.length > 0 ? (
                     data.map((ele, index) => (
-                        <div key={index} className="card" style={{ width: "18rem" }} onClick={e=>window.location.href=`/sofa?sku=${ele.Sku}`}>
+                        <div key={index} className="card" style={{ width: "18rem" }} onClick={e=>window.location.href=`/sfs?sku=${ele.Sku}`}>
                         <img
-                            src={`http://localhost:3000/public/img/sofa/${ele["Sub Category"].replace(' ', '%20')}/${ele["Sku"]}/main.jpg`}
+                            src={`https://api-sc-pgsn.onrender.com/public/img/sofa/${ele["Sub Category"].replace(' ', '%20')}/${ele["Sku"]}/main.jpg`}
                             alt={ele.Title}
                             className="card-img-top"
                         />
@@ -72,7 +76,8 @@ function Seat1(){
                             <small className="silver">{ele["Sub Category"]}</small>
                             <hr />
                 
-                            <p className="card-text">₹ {ele["Mrp "]}</p>
+                            <p className="card-text"><s style={{color:"silver"}}>{formatter.format(ele["Mrp "])}</s> {formatter.format(ele["Selling Price "])} <span style={{color:"green"}}>Save 25%</span></p>
+
                             
                         </div>
                     </div>
