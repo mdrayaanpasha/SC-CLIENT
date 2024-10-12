@@ -135,9 +135,12 @@ const Nav = () => {
           <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/cart">Cart</a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="/myorders">My Orders</a>
+            </li>
           {isLoggedIn && (
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/"> Hello, {Email} </a>
+              <a className="nav-link active" aria-current="page" href="/"> Hello, {Email} 👋 </a>
             </li>
           )}
         </ul>
