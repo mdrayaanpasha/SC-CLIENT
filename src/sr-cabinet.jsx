@@ -1,7 +1,7 @@
 import Nav from "./nav"
 import axios from "axios"
 import { useEffect, useState } from "react"
-
+import Loading from "./loading";
 function CabSR(){
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -81,7 +81,8 @@ function CabSR(){
                     </div>
                     ))
                 ) : (
-                    <p>No data available</p>
+                    <Loading></Loading>
+
                 )}
             </div>
         </>

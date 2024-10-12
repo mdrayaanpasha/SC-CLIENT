@@ -1,7 +1,7 @@
 import Nav from "./nav";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import Loading from "./loading";
 function SR() {
     const searchParams = new URLSearchParams(location.search);
     const [sku, setSku] = useState(searchParams.get("sku"));
@@ -694,7 +694,8 @@ function SR() {
                          </div>
                          </div>
                     ) : (
-                        <p>Loading...</p>
+                        <Loading></Loading>
+
                     )}
                     
                 </div>

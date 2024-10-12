@@ -6,7 +6,7 @@ import Seat2 from "./img/sofa-cat/sofa-cat-2.jpg"
 import Seat3 from "./img/sofa-cat/sofa-cat-3.jpg"
 import L from "./img/sofa-cat/sofa-cat-l.jpg"
 import bench from "./img/sofa-cat/sofa-cat-bench.jpg"
-
+import Loading from "./loading"
 
 function Sofas() {
 
@@ -229,7 +229,8 @@ function Sofas() {
                         </p>
                     </div>
                 </div>
-            ) : null
+            ) :                     <Loading></Loading>
+
         ))}
     </div>
 ) : null}

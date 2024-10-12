@@ -1,6 +1,8 @@
 import Nav from "./nav"
 import axios from "axios"
 import { useEffect, useState } from "react"
+import Loading from "./loading"
+
 
 function BenchSR(){
     const [data,setData]=useState(null)
@@ -79,7 +81,8 @@ function BenchSR(){
                     </div>
                     ))
                 ) : (
-                    <p>No data available</p>
+                    <Loading></Loading>
+
                 )}
             </div>
         </>

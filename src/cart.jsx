@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Nav from "./nav";
 import cartImg from "./img/shopping.png"
 import loginImg from "./img/login.png"
+import Loading from "./loading";
 function Cart() {
     const [email, setEmail] = useState(null);
     const [SKus, setSkus] = useState([]);

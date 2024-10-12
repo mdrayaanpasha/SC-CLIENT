@@ -1,6 +1,7 @@
 import Nav from "./src/nav";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Loading from "./src/loading";
 
 function Sf() {
     const searchParams = new URLSearchParams(location.search);
@@ -899,7 +900,7 @@ function Sf() {
                          </div>
                          </div>
                     ) : (
-                        <p>Loading...</p>
+                        <Loading></Loading>
                     )}
                     
                 </div>

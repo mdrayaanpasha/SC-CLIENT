@@ -1,7 +1,7 @@
 import Nav from "./nav"
 import axios from "axios"
 import { useEffect, useState } from "react"
-
+import Loading from "./loading"
 function SeatSR(){
     const [data,setData]=useState(null)
     const formatter = new Intl.NumberFormat('en-US', {
@@ -80,7 +80,8 @@ function SeatSR(){
                     </div>
                     ))
                 ) : (
-                    <p>No data available</p>
+                    <Loading></Loading>
+
                 )}
             </div>
         </>
