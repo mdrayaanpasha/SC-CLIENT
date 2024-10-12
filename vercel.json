@@ -1,0 +1,30 @@
+{
+    "routes":[
+        { "src": "/spotlights", "dest": "/" },
+        { "src": "/sofaimg", "dest": "/" },
+        { "src": "/sofas", "dest": "/" },
+        { "src": "/sfs", "dest": "/" },
+        { "src": "/sofas/3Seater", "dest": "/" },
+        { "src": "/sofas/2Seater", "dest": "/" },
+        { "src": "/sofas/1Seater", "dest": "/" },
+        { "src": "/sofas/LShaped", "dest": "/" },
+        { "src": "/sofas/storageBench", "dest": "/" },
+        { "src": "/shoeracks", "dest": "/" },
+        { "src": "/sr", "dest": "/" },
+        { "src": "/shoeracks/seat", "dest": "/" },
+        { "src": "/shoeracks/bench", "dest": "/" },
+        { "src": "/shoeracks/cabinet", "dest": "/" },
+        { "src": "/reg", "dest": "/" },
+        { "src": "/login", "dest": "/" },
+        { "src": "/cart", "dest": "/" },
+        { "src": "/order", "dest": "/" },
+        { "src": "/success", "dest": "/" },
+        { "src": "/failed", "dest": "/" },
+        { "src": "/X_MIN_DASH", "dest": "/" },
+        { "src": "/myorders", "dest": "/" },
+        { "src": "/pay", "dest": "/" }
+      ]
+      
+  }
+
+       
