@@ -39,10 +39,10 @@ function Admin() {
       return;
     }
 
-    if (password === "rayaan") {
+    if (password === "solacecraft@admin.123") {
       setAuthenticated(true);
     } else {
-      alert("Either you are not the admin or contact here: mdrayaanpasha@gmail.com");
+      alert("Wrong Password!");
     }
   };
 
