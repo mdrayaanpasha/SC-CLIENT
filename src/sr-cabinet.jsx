@@ -1,7 +1,7 @@
 import Nav from "./nav"
 import axios from "axios"
 import { useEffect, useState } from "react"
-import Loading from "./loading";
+import LoadingComponent from "./loadingComp";
 function CabSR(){
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -65,7 +65,7 @@ function CabSR(){
                     data.map((ele, index) => (
                         <div key={index} className="card" style={{ width: "18rem" }} onClick={e=>window.location.href=`/sr?sku=${ele.Sku}`}>
                         <img
-                            src={`https://api-sc-pgsn.onrender.com/public/img/SR/${ele["Sub Category"].replace(' ', '%20')}/${ele["Sku"]}/main.jpg`}
+                            src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/${ele["Sub Category"].replace(' ', '%20')}/${ele["Sku"]}/main.jpg`}
                             alt={ele.Title}
                             className="card-img-top"
                         />
@@ -81,7 +81,7 @@ function CabSR(){
                     </div>
                     ))
                 ) : (
-                    <Loading></Loading>
+                    <LoadingComponent/>
 
                 )}
             </div>

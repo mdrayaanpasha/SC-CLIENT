@@ -5,7 +5,22 @@ const Nav = () => {
     const E = localStorage.getItem("D");
     const isLoggedIn = E ? true : false;
     const Email = E ? E.split("@")[0] : "";
-
+    const furnitureFacts = [
+      'The oldest known chair is over 5,000 years old!',
+      'The term “couch” comes from the French word “coucher,” meaning “to lie down.”',
+      'Ancient Egyptians were the first to use wooden beds with raised frames.',
+      'The first known tables were used by ancient Egyptians for dining and working.',
+      'Chippendale furniture, popular in the 18th century, is named after its designer, Thomas Chippendale.',
+      'The average lifespan of a sofa is about 7-15 years.'
+  ];
+  
+  const getRandomFact = () => {
+      const randomIndex = Math.floor(Math.random() * furnitureFacts.length);
+      return furnitureFacts[randomIndex];
+  };
+  
+  
+  
     return (
         <>
         <link rel="preconnect" href="https://fonts.googleapis.com" />

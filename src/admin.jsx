@@ -329,7 +329,7 @@ function Admin() {
                   <td>{order["Costumer Id"]}</td>
                   <td>{order["Costumer Adress"]}</td>
                   <td><img 
-                    src={`https://api-sc-pgsn.onrender.com/public/img/${order["Product Type"] === "Sofa" ? "sofa" : order["Product Type"].toUpperCase() }/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
+                    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${order["Product Type"] === "Sofa" ? "sofa" : order["Product Type"].toUpperCase() }/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
                     alt="" /></td>
                   <td>{order["Product Sku"]}</td>
                   <td>{order["Product Name"]}</td>
@@ -381,7 +381,7 @@ function Admin() {
                   <td>{order["Costumer Adress"]}</td>
                   <td>{order["Product Name"]}</td>
                   <td><img 
-                    src={`https://api-sc-pgsn.onrender.com/public/img/${order["Product Type"] === "Sofa" ? "sofa" : order["Product Type"].toUpperCase() }/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
+                    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${order["Product Type"] === "Sofa" ? "sofa" : order["Product Type"].toUpperCase() }/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
                     alt="" /></td>
                   <td>{formatter.format(order["Product Price"])}</td>
                   <td style={{color:"red",cursor:"pointer"}} onClick={() => delCancel(order._id)}><i className="material-icons">delete</i></td>

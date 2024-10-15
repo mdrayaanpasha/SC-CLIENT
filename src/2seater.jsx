@@ -1,6 +1,7 @@
 import Nav from "./nav"
 import axios from "axios"
 import { useEffect, useState } from "react"
+import LoadingComponent from "./loadingComp";
 
 function Seat2(){
     const formatter = new Intl.NumberFormat('en-US', {
@@ -65,7 +66,7 @@ function Seat2(){
                     data.map((ele, index) => (
                         <div key={index} className="card" style={{ width: "18rem" }} onClick={e=>window.location.href=`/sfs?sku=${ele.Sku}`}>
                         <img
-                            src={`https://api-sc-pgsn.onrender.com/public/img/sofa/${ele["Sub Category"].replace(' ', '%20')}/${ele["Sku"]}/main.jpg`}
+                            src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${ele["Sub Category"].replace(' ', '%20')}/${ele["Sku"]}/main.jpg`}
                             alt={ele.Title}
                             className="card-img-top"
                         />
@@ -81,7 +82,7 @@ function Seat2(){
                     </div>
                     ))
                 ) : (
-                    <p>No data available</p>
+                    <LoadingComponent/>
                 )}
             </div>
         </>

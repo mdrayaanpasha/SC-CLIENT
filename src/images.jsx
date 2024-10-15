@@ -90,7 +90,7 @@ function Images() {
     <center>
     <div className="main">
       <img
-        src={`https://api-sc-pgsn.onrender.com/public/img/sofa/${info["Sub Category"]}/${sku}/${selected}`}
+        src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${info["Sub Category"]}/${sku}/${selected}`}
         alt="this"
       />
       
@@ -99,13 +99,13 @@ function Images() {
   <div className="other">
     
   <img 
-      src={`https://api-sc-pgsn.onrender.com/public/img/sofa/${info["Sub Category"]}/${sku}/main.jpg`}
+      src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${info["Sub Category"]}/${sku}/main.jpg`}
       className={`/main.jpg` === selected ? "selected" : "notselected"}
       onClick={e=>setSelected(`/main.jpg`)} /> 
   {imgPaths.map((ele, index) => (
     <img
       key={index}
-      src={`https://api-sc-pgsn.onrender.com/public/img/sofa/${info["Sub Category"]}/${sku}/${ele}`}
+      src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${info["Sub Category"]}/${sku}/${ele}`}
       className={`/${ele}` === selected ? "selected" : "notselected"}
       onClick={e=>setSelected(`/${ele}`)}
     />

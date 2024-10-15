@@ -1,7 +1,7 @@
 import Nav from "./nav";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Loading from "./loading";
+import LoadingComponent from "./loadingComp";
 function SR() {
     const searchParams = new URLSearchParams(location.search);
     const [sku, setSku] = useState(searchParams.get("sku"));
@@ -694,7 +694,7 @@ function SR() {
                          </div>
                          </div>
                     ) : (
-                        <Loading></Loading>
+                        <LoadingComponent/>
 
                     )}
                     
@@ -729,7 +729,7 @@ function SR() {
                             <div key={index}>
                                 <img 
                                     className={ele === sku ? 'main-img' : 'other-img'}
-                                    src={`https://api-sc-pgsn.onrender.com/public/img/SR/${mainProduct[0]["Sub Category"]}/${ele}/main.jpg`} 
+                                    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/${mainProduct[0]["Sub Category"]}/${ele}/main.jpg`} 
                                     alt={ele} 
                                     onClick={e => setSku(ele.replace(" ",""))}
                                 />

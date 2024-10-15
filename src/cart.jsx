@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Nav from "./nav";
 import cartImg from "./img/shopping.png"
 import loginImg from "./img/login.png"
-import Loading from "./loading";
+
 function Cart() {
     const [email, setEmail] = useState(null);
     const [SKus, setSkus] = useState([]);
@@ -364,7 +364,7 @@ function Cart() {
                     }
                     {email && Data.map(ele => (
                         <div key={ele.Sku} className="flex">
-                            <img src={`https://api-sc-pgsn.onrender.com/public/img/${ele["Product Category"] === "Sofa" ? "sofa" : "SR"}/${ele["Sub Category"]}/${ele["Sku"]}/main.jpg`} alt="Product" onClick={e=>window.location.href=`/${ele["url"]}?sku=${ele["Sku"]}`}/>
+                            <img src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${ele["Product Category"] === "Sofa" ? "sofa" : "SR"}/${ele["Sub Category"]}/${ele["Sku"]}/main.jpg`} alt="Product" onClick={e=>window.location.href=`/${ele["url"]}?sku=${ele["Sku"]}`}/>
                             <div className="info">
                                 <div dir="rtl">
                                     <i className="material-icons icon" onClick={() => delcart(ele.Sku)}>delete</i>

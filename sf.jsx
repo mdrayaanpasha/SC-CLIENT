@@ -1,7 +1,8 @@
 import Nav from "./src/nav";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Loading from "./src/loading";
+import LoadingComponent from "./src/loadingComp";
+
 
 function Sf() {
     const searchParams = new URLSearchParams(location.search);
@@ -807,7 +808,7 @@ function Sf() {
 <button onClick={() => document.getElementById('imageDialog').close()}>&#10006;</button>
 <center>
     <img class="di-main-img"
-    src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"].toLowerCase()}/${mainProduct[0]["Sub Category"]}/${sku}/${diSelected}`} 
+    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0]["Product Category"].toLowerCase()}/${mainProduct[0]["Sub Category"]}/${sku}/${diSelected}`} 
     
     
     />
@@ -818,7 +819,7 @@ function Sf() {
       <div className="flex-dia">
       {productImgs.map(ele => (
         <img 
-          src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"].toLowerCase()}/${mainProduct[0]["Sub Category"]}/${sku}/${ele}`} 
+          src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0]["Product Category"].toLowerCase()}/${mainProduct[0]["Sub Category"]}/${sku}/${ele}`} 
           onClick={e => setDiSelected(ele)} 
           alt="" 
         />
@@ -891,7 +892,7 @@ function Sf() {
                         <div className="ProductAll">
                         <div className="otherimgs">
                             {productImgs.map(ele=>(
-                            <img src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"].toLowerCase()}/${mainProduct[0]["Sub Category"]}/${sku}/${ele}`} onClick={e=>setSelectedImg(ele)}  alt="" />
+                            <img src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0]["Product Category"].toLowerCase()}/${mainProduct[0]["Sub Category"]}/${sku}/${ele}`} onClick={e=>setSelectedImg(ele)}  alt="" />
 
                            ))}
                         </div>
@@ -900,7 +901,7 @@ function Sf() {
                             <button onClick={handlePrevClick} class="carousel-prev">&larr;</button>
 
                             <img
-        src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"].toLowerCase()}/${mainProduct[0]["Sub Category"]}/${sku}/${selectedImg}`}
+        src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0]["Product Category"].toLowerCase()}/${mainProduct[0]["Sub Category"]}/${sku}/${selectedImg}`}
         className={selectedImg === 'main.jpg' ? 'carousel-yes' : 'carousel-no'}
          alt="" onClick={() => document.getElementById('imageDialog').showModal()} 
 
@@ -908,7 +909,7 @@ function Sf() {
                          </div>
                          </div>
                     ) : (
-                        <Loading></Loading>
+                        <LoadingComponent/>
                     )}
                     
                 </div>
@@ -941,7 +942,7 @@ function Sf() {
                             <div key={index}>
                                 <img 
                                     className={ele === sku ? 'main-img' : 'other-img'}
-                                    src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"].toLowerCase()}/${mainProduct[0]["Sub Category"]}/${ele.replace(" ","")}/main.jpg`} 
+                                    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0]["Product Category"].toLowerCase()}/${mainProduct[0]["Sub Category"]}/${ele.replace(" ","")}/main.jpg`} 
                                     alt={ele} 
                                     onClick={e => setSku(ele.replace(" ",""))}
                                 />
@@ -958,7 +959,7 @@ function Sf() {
                             <div key={index}>
                                 <img 
                                     className={ele === sku ? 'main-img' : 'other-img'}
-                                    src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"].toLowerCase()}/${mainProduct[0]["Sub Category"]}/${ele}/main.jpg`} 
+                                    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0]["Product Category"].toLowerCase()}/${mainProduct[0]["Sub Category"]}/${ele}/main.jpg`} 
                                     alt={ele} 
                                     onClick={e => setSku(ele)}
                                 />

@@ -509,13 +509,11 @@ flex: 0 0 auto;
             <h3 style={{position:"absolute",right:"0",}}>Slide &#8594; </h3>
                 {RandomData && RandomData.map(element => (
                     <div className="card" style={{ width: "18rem" }}>
-                   <img className="thing" src={`https://api-sc-pgsn.onrender.com/public/img/${element["Product Category"] === "Sofa" ? element["Product Category"].toLowerCase() : element["Product Category"].toUpperCase() }/${element["Sub Category"]}/${element["Sku"]}/main.jpg`} alt={element["Title"]}onClick={e=>window.location.href=element["Redirect"]}></img>
+                   <img className="thing" src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${element["Product Category"] === "Sofa" ? element["Product Category"].toLowerCase() : element["Product Category"].toUpperCase() }/${element["Sub Category"]}/${element["Sku"]}/main.jpg`} alt={element["Title"]}onClick={e=>window.location.href=element["Redirect"]}></img>
                    
                 </div>
                 ))}
-                <h3 style={{color: '#4A4270', cursor:"pointer" }} onClick={e=>window.location.href="/spotlights"}>
-                    View All &#8594;
-                </h3>
+                
                 
             </div>
             
@@ -582,7 +580,7 @@ z-index: 1 !important;
 </style>
                 
                 <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="/sfs?sku=SCSO240001"}>
-                    <img src="https://api-sc-pgsn.onrender.com/public/img/sofa/L%20Shape%20Sofa/SCSO240001/main.jpg" className="card-img-top" alt="..." />
+                    <img src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/L%20Shape%20Sofa/SCSO240001/main.jpg" className="card-img-top" alt="..." />
                         <div className="card-body">
                         <h5 className="card-title">Arley L Shape Sofa</h5>
                         <p><b style={{color:"#4A4270"}}>L Shaped Sofa</b></p>
@@ -593,7 +591,7 @@ z-index: 1 !important;
 
 
                 <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="https://api-sc-pgsn.onrender.com/sfs?sku=SCSO23003BL"}>
-                    <img src="https://api-sc-pgsn.onrender.com/public/img/sofa/3%20Seater%20Sofa/SCSO23003BL/main.jpg" className="card-img-top" alt="..." />
+                    <img src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/3%20Seater%20Sofa/SCSO23003BL/main.jpg" className="card-img-top" alt="..." />
                         <div className="card-body">
                         <h5 className="card-title">Swank Fabric Sofa</h5>
                         <p><b style={{color:"#4A4270"}}>3 Seater Sofa</b></p>
@@ -606,7 +604,7 @@ z-index: 1 !important;
                 </div>
                 
                 <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="https://api-sc-pgsn.onrender.com/sfs?sku=SCSO240003"}>
-                    <img src="https://api-sc-pgsn.onrender.com/public/img/sofa/L%20Shape%20Sofa/SCSO240003/main.jpg" className="card-img-top" alt="..." />
+                    <img src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/L%20Shape%20Sofa/SCSO240003/main.jpg" className="card-img-top" alt="..." />
                         <div className="card-body">
                         <h5 className="card-title">Emily L Shape Sofa</h5>
                         <p><b style={{color:"#4A4270"}}>L Shaped Sofa</b></p>
@@ -618,7 +616,7 @@ z-index: 1 !important;
                 </div>
 
                 <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="https://api-sc-pgsn.onrender.com/sfs?sku=SCSO240009CGY"}>
-                    <img src="https://api-sc-pgsn.onrender.com/public/img/sofa/3%20Seater%20Sofa/SCSO240008CGY/main.JPG" className="card-img-top" alt="..." />
+                    <img src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/3%20Seater%20Sofa/SCSO240008CGY/main.JPG" className="card-img-top" alt="..." />
                         <div className="card-body">
                         <h5 className="card-title">Imperial Leatherette 2 Seater Sofa</h5>
                         <p><b style={{color:"#4A4270"}}>3 Seater Sofa</b></p>

@@ -6,7 +6,7 @@ import Seat2 from "./img/sofa-cat/sofa-cat-2.jpg"
 import Seat3 from "./img/sofa-cat/sofa-cat-3.jpg"
 import L from "./img/sofa-cat/sofa-cat-l.jpg"
 import bench from "./img/sofa-cat/sofa-cat-bench.jpg"
-import Loading from "./loading"
+import LoadingComponent from "./loadingComp"
 
 function Sofas() {
 
@@ -216,7 +216,7 @@ function Sofas() {
             ele !== undefined ? (
                 <div key={index} className="card" style={{ width: "18rem" }} onClick={() => se(ele.Sku)}>
                     <img
-                        src={`https://api-sc-pgsn.onrender.com/public/img/sofa/${ele["Sub Category"].replace(" ", "%20")}/${ele.Sku}/main.jpg`}
+                        src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${ele["Sub Category"].replace(" ", "%20")}/${ele.Sku}/main.jpg`}
                         alt={ele.Title}
                         className="card-img-top"
                     />
@@ -229,7 +229,8 @@ function Sofas() {
                         </p>
                     </div>
                 </div>
-            ) :                     <Loading></Loading>
+            ) :
+            <LoadingComponent/>
 
         ))}
     </div>
