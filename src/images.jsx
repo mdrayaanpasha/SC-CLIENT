@@ -91,6 +91,7 @@ function Images() {
     <div className="main">
       <img
         src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${info["Sub Category"]}/${sku}/${selected}`}
+        loading="lazy"
         alt="this"
       />
       
@@ -101,12 +102,14 @@ function Images() {
   <img 
       src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${info["Sub Category"]}/${sku}/main.jpg`}
       className={`/main.jpg` === selected ? "selected" : "notselected"}
+      loading="lazy"
       onClick={e=>setSelected(`/main.jpg`)} /> 
   {imgPaths.map((ele, index) => (
     <img
       key={index}
       src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${info["Sub Category"]}/${sku}/${ele}`}
       className={`/${ele}` === selected ? "selected" : "notselected"}
+      loading="lazy"
       onClick={e=>setSelected(`/${ele}`)}
     />
     

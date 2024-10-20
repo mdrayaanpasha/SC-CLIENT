@@ -69,6 +69,7 @@ function StorageBench(){
                         <img
                             src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${ele["Sub Category"].replace(' ', '%20')}/${ele["Sku"]}/main.jpg`}
                             alt={ele.Title}
+                            loading="lazy"
                             className="card-img-top"
                         />
                         <div className="card-body">

@@ -282,7 +282,7 @@ function Admin() {
       {!authenticated && (
         <section className="formthing">
           <form onSubmit={handleForm}>
-            <img src={logo} alt="" />
+            <img src={logo} alt="" loading="lazy" />
             
             <input type="password" name="password" className="form-control mb-3" placeholder="Enter password" />
             <input type="submit" className="btn btn-primary" value="Get Access" />
@@ -330,7 +330,9 @@ function Admin() {
                   <td>{order["Costumer Adress"]}</td>
                   <td><img 
                     src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${order["Product Type"] === "Sofa" ? "sofa" : order["Product Type"].toUpperCase() }/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
-                    alt="" /></td>
+                    alt="" 
+                    loading="lazy"
+                    /></td>
                   <td>{order["Product Sku"]}</td>
                   <td>{order["Product Name"]}</td>
                   <td>{order["Product Quantity"] ? order["Product Quantity"] : 1}</td>
@@ -382,7 +384,9 @@ function Admin() {
                   <td>{order["Product Name"]}</td>
                   <td><img 
                     src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${order["Product Type"] === "Sofa" ? "sofa" : order["Product Type"].toUpperCase() }/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
-                    alt="" /></td>
+                    alt="" 
+                    loading="lazy"
+                    /></td>
                   <td>{formatter.format(order["Product Price"])}</td>
                   <td style={{color:"red",cursor:"pointer"}} onClick={() => delCancel(order._id)}><i className="material-icons">delete</i></td>
 

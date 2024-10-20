@@ -299,7 +299,7 @@ function Cart() {
                       
                             <div className="div1">
                             
-                                <img src={cartImg} style={{}}alt="" />
+                                <img src={cartImg} style={{}}alt="" loading="lazy"/>
                                 <div className="div-m">
                                 <h3>Your Cart Is Empty!</h3> 
                                 <h6>Start Shopping Today</h6>

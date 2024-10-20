@@ -667,7 +667,7 @@ z-index: 1 !important;
 </style>
 <div className="trending">
     <center>
-        <img src={trending} alt="" />
+        <img src={trending} alt="" loading="lazy" />
     <h1 style={{fontSize:"10vh", fontWeight:"bolder", color:"#676186"}} className="main-theme">MUST HAVE STYLES!</h1>
     <p style={{color:"#676186"}} className="main-theme-p">Discover what's making waves in home decor. Our trending section brings you the most sought-after pieces that blend style, comfort, and functionality effortlessly.</p>
     </center>

@@ -220,7 +220,7 @@ function Order(){
                 <div className="flex-card">
                     <img 
 src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${productInfo[0]["Product Category"] === "Sofa" ? productInfo[0]["Product Category"].toLowerCase() : productInfo[0]["Product Category"].toUpperCase()}/${productInfo[0]["Sub Category"]}/${sku}/main.jpg`}
-
+loading="lazy"
                     alt="" />
                     <div className="info">
                        <h2>{productInfo[0].Title}</h2> 

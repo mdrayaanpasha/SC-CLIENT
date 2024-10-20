@@ -168,6 +168,7 @@ function MyOrder() {
                                 <img
                                     src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${ele["Product Type"] === "Sofa" ? "sofa" : ele["Product Type"].toUpperCase()}/${ele["Product Sub-Type"]}/${ele["Product Sku"]}/main.jpg`}
                                     alt={`Image of ${ele["Product Name"]}`}
+                                    loading="lazy"
                                 />
                                 <div className="des">
                                     <p style={{fontSize:"3vh"}}><b>{ele["Product Name"]}</b></p>

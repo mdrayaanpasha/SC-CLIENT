@@ -140,15 +140,15 @@ function ShoeRacks() {
             <h4 className="theme">Categories</h4>
             <div className="categories">
                 <div className="cat">
-                    <img src={Cab} alt="" onClick={e => window.location.href = "/shoeracks/cabinet"} />
+                    <img src={Cab} alt="" onClick={e => window.location.href = "/shoeracks/cabinet"} loading="lazy" />
                     <center><p className="silver">Cabinet</p></center>
                 </div>
                 <div className="cat" onClick={e => window.location.href = "/shoeracks/bench"}>
-                    <img src={Bench} alt="" />
+                    <img src={Bench} alt="" loading="lazy" />
                     <center><p className="silver">With Bench</p></center>
                 </div>
                 <div className="cat" onClick={e => window.location.href = "/shoeracks/seat"}>
-                    <img src={Seat} alt="" />
+                    <img src={Seat} alt="" loading="lazy" />
                     <center><p className="silver">With Seat</p></center>
                 </div>
             </div>
@@ -163,6 +163,7 @@ function ShoeRacks() {
                                     src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/${ele["Sub Category"].replace(' ', '%20')}/${ele["Sku"]}/main.jpg`}
                                     alt={ele.Title}
                                     className="card-img-top"
+                                    loading="lazy"
                                 />
                                 <div className="card-body">
                                     <h5 className="card-title">{ele.Title}</h5>
@@ -176,7 +177,10 @@ function ShoeRacks() {
                         ))}
                     </div>
                 ) : (
-                    <LoadingComponent/>
+                   <>
+                   <center><h2>Loading.......</h2>
+                   <small>Did you know that, the first pieces of furniture were made from animal hides</small></center>
+                   </>
                 )}
             </div>
         </>

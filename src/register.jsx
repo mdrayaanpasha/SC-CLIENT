@@ -144,7 +144,7 @@ function Register() {
       {form ? (
         <div className="div-d">
           <div className="div-d-img">
-          <img src={img} alt="" />
+          <img src={img} alt="" loading="lazy"/>
           </div>
         <form onSubmit={reg}>
          <center><h3 className="theme">Register!</h3></center> 

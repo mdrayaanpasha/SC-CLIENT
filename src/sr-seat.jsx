@@ -68,6 +68,7 @@ function SeatSR(){
                             src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/${ele["Sub Category"].replace(' ', '%20')}/${ele["Sku"]}/main.jpg`}
                             alt={ele.Title}
                             className="card-img-top"
+                            loading="lazy"
                         />
                         <div className="card-body">
                             <h5 className="card-title">{ele.Title}</h5>

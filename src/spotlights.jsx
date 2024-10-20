@@ -78,7 +78,9 @@ function Spotlights(){
         <div className="spotlight" >
                 {RandomData && RandomData.map(element => (
                     <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href=element["Redirect"]}>
-                        <img className="thing" src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${element["Product Category"]}/${element["Sub Category"]}/${element["Sku"]}/main.jpg`} alt={element["Title"]} ></img>
+                        <img className="thing" src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${element["Product Category"]}/${element["Sub Category"]}/${element["Sku"]}/main.jpg`}
+                        loading="lazy"
+                         alt={element["Title"]} ></img>
                         <div className="card-body">
                         <h5 className="card-title">Swank Fabric Sofa</h5>
                         <p><b>3 Seater Sofa</b></p>
