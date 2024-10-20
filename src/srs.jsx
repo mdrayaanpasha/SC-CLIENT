@@ -585,7 +585,7 @@ function SR() {
 <center>
     <img class="di-main-img"
     src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"]}/${mainProduct[0]["Sub Category"]}/${sku}/${diSelected}`} 
-    
+    loading="lazy"
     
     />
     </center>
@@ -598,6 +598,7 @@ function SR() {
           src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"]}/${mainProduct[0]["Sub Category"]}/${sku}/${ele}`} 
           onClick={e => setDiSelected(ele)} 
           alt="" 
+          loading="lazy"
         />
       ))}
       </div>
@@ -677,7 +678,7 @@ function SR() {
                         <div className="ProductAll">
                         <div className="otherimgs">
                             {productImgs.map(ele=>(
-                            <img src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"]}/${mainProduct[0]["Sub Category"]}/${sku}/${ele}`} onClick={e=>setSelectedImg(ele)}  alt="" />
+                            <img src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"]}/${mainProduct[0]["Sub Category"]}/${sku}/${ele}`} onClick={e=>setSelectedImg(ele)}  loading="lazy" alt="" />
 
                            ))}
                         </div>
@@ -689,7 +690,7 @@ function SR() {
         src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"]}/${mainProduct[0]["Sub Category"]}/${sku}/${selectedImg}`}
         className={selectedImg === 'main.jpg' ? 'carousel-yes' : 'carousel-no'} 
         alt="" onClick={() => document.getElementById('imageDialog').showModal()}
-
+loading="lazy"
       />                       
                          </div>
                          </div>
@@ -732,6 +733,7 @@ function SR() {
                                     src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/${mainProduct[0]["Sub Category"]}/${ele}/main.jpg`} 
                                     alt={ele} 
                                     onClick={e => setSku(ele.replace(" ",""))}
+                                    loading="lazy"
                                 />
                             </div>
                         )
@@ -869,7 +871,9 @@ function SR() {
                   
                     <img 
                     src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"]}/${ele["Sub Category"]}/${ele.Sku}/main.jpg`}
-                    alt={ele.Sku}  class="card-img-top"/>
+                    alt={ele.Sku}  class="card-img-top"
+                    loading="lazy"
+                    />
                     <div class="card-body">
                       <h5 class="card-title"><span className="d-inline-block text-truncate" style={{ maxWidth: '90%' }}>{ele.Title}</span></h5>
                       <p class="card-text"><p style={{color:"#6F698A"}} id="th">{ele["Sub Category"]}</p>

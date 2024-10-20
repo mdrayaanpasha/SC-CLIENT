@@ -444,13 +444,13 @@ flex: 0 0 auto;
                 <div id="carouselExampleFade" class="carousel slide carousel-fade">
                     <div class="carousel-inner" id='vid-main-pc'>
                         <div class="carousel-item active">
-                        <img src={o} class="d-block w-100" alt="..." />
+                        <img src={o} class="d-block w-100" alt="..." loading="lazy" />
                         </div>
                         <div class="carousel-item">
-                        <img src={t} class="d-block w-100" alt="..." />
+                        <img src={t} class="d-block w-100" alt="..." loading="lazy"/>
                         </div>
                         <div class="carousel-item">
-                        <img src={th} class="d-block w-100" alt="..." />
+                        <img src={th} class="d-block w-100" alt="..." loading="lazy"/>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -479,11 +479,11 @@ flex: 0 0 auto;
             </div>
             <div className="category" style={{padding:"2vw"}}>
                 <div className="c">
-                    <img src={sofa} alt="Sofa" onClick={e => window.location.href = "/sofas"} />
+                    <img src={sofa} alt="Sofa" onClick={e => window.location.href = "/sofas"} loading="lazy" />
                     <center><p>Sofa</p></center>
                 </div>
                 <div className="c">
-                    <img src={dining} alt="Dining" />
+                    <img src={dining} alt="Dining" loading="lazy"/>
                     <center><p>Dining</p></center>
                 </div>
                 <div className="c">
@@ -491,7 +491,7 @@ flex: 0 0 auto;
                     <center><p>Beds</p></center>
                 </div>
                 <div className="c">
-                    <img src={shoe} alt="Shoe Racks" onClick={e => window.location.href = "/shoeracks"} />
+                    <img src={shoe} alt="Shoe Racks" onClick={e => window.location.href = "/shoeracks"} loading="lazy" />
                     <center><p>Shoe Racks</p></center>
                 </div>
             </div>
@@ -509,7 +509,7 @@ flex: 0 0 auto;
             <h3 style={{position:"absolute",right:"0",}}>Slide &#8594; </h3>
                 {RandomData && RandomData.map(element => (
                     <div className="card" style={{ width: "18rem" }}>
-                   <img className="thing" src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${element["Product Category"] === "Sofa" ? element["Product Category"].toLowerCase() : element["Product Category"].toUpperCase() }/${element["Sub Category"]}/${element["Sku"]}/main.jpg`} alt={element["Title"]}onClick={e=>window.location.href=element["Redirect"]}></img>
+                   <img className="thing" src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${element["Product Category"] === "Sofa" ? element["Product Category"].toLowerCase() : element["Product Category"].toUpperCase() }/${element["Sub Category"]}/${element["Sku"]}/main.jpg`} alt={element["Title"]}onClick={e=>window.location.href=element["Redirect"]} loading="lazy"></img>
                    
                 </div>
                 ))}
@@ -525,10 +525,10 @@ flex: 0 0 auto;
     </center>
     
             <div className="random" style={{backgroundColor:"#F8F7F2"}}>
-            <video src={sofaban} autoPlay muted loop  onClick={e=>window.location.href="/sofas"} style={{cursor:"pointer"}} ></video>
-            <video src={diningban} autoPlay muted loop  onClick={e=>window.location.href="/"} style={{cursor:"pointer"}}></video>
-            <video src={bedban} autoPlay muted loop style={{cursor:"pointer"}}></video>
-            <video src={shoerackban} autoPlay loop muted onClick={e=>window.location.href="/shoeracks"} style={{cursor:"pointer"}}></video>
+            <video src={sofaban} autoPlay muted loop  onClick={e=>window.location.href="/sofas"} style={{cursor:"pointer"}} loading="lazy"></video>
+            <video src={diningban} autoPlay muted loop  onClick={e=>window.location.href="/"} style={{cursor:"pointer"}} loading="lazy"></video>
+            <video src={bedban} autoPlay muted loop style={{cursor:"pointer"}} loading="lazy"></video>
+            <video src={shoerackban} autoPlay loop muted onClick={e=>window.location.href="/shoeracks"} style={{cursor:"pointer"} }loading="lazy"></video>
         </div>
         
         <hr />
@@ -580,7 +580,7 @@ z-index: 1 !important;
 </style>
                 
                 <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="/sfs?sku=SCSO240001"}>
-                    <img src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/L%20Shape%20Sofa/SCSO240001/main.jpg" className="card-img-top" alt="..." />
+                    <img src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/L%20Shape%20Sofa/SCSO240001/main.jpg" className="card-img-top" alt="..." loading="lazy" />
                         <div className="card-body">
                         <h5 className="card-title">Arley L Shape Sofa</h5>
                         <p><b style={{color:"#4A4270"}}>L Shaped Sofa</b></p>
@@ -590,8 +590,8 @@ z-index: 1 !important;
                 </div>
 
 
-                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="https://api-sc-pgsn.onrender.com/sfs?sku=SCSO23003BL"}>
-                    <img src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/3%20Seater%20Sofa/SCSO23003BL/main.jpg" className="card-img-top" alt="..." />
+                <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="https://api-sc-pgsn.onrender.com/sfs?sku=SCSO23003BL"} >
+                    <img src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/3%20Seater%20Sofa/SCSO23003BL/main.jpg" loading="lazy" className="card-img-top" alt="..." />
                         <div className="card-body">
                         <h5 className="card-title">Swank Fabric Sofa</h5>
                         <p><b style={{color:"#4A4270"}}>3 Seater Sofa</b></p>
@@ -604,7 +604,7 @@ z-index: 1 !important;
                 </div>
                 
                 <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="https://api-sc-pgsn.onrender.com/sfs?sku=SCSO240003"}>
-                    <img src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/L%20Shape%20Sofa/SCSO240003/main.jpg" className="card-img-top" alt="..." />
+                    <img src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/L%20Shape%20Sofa/SCSO240003/main.jpg" loading="lazy" className="card-img-top" alt="..." />
                         <div className="card-body">
                         <h5 className="card-title">Emily L Shape Sofa</h5>
                         <p><b style={{color:"#4A4270"}}>L Shaped Sofa</b></p>
@@ -616,7 +616,7 @@ z-index: 1 !important;
                 </div>
 
                 <div className="card" style={{ width: "18rem" }} onClick={e=>window.location.href="https://api-sc-pgsn.onrender.com/sfs?sku=SCSO240009CGY"}>
-                    <img src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/3%20Seater%20Sofa/SCSO240008CGY/main.JPG" className="card-img-top" alt="..." />
+                    <img src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/3%20Seater%20Sofa/SCSO240008CGY/main.JPG" loading="lazy" className="card-img-top" alt="..." />
                         <div className="card-body">
                         <h5 className="card-title">Imperial Leatherette 2 Seater Sofa</h5>
                         <p><b style={{color:"#4A4270"}}>3 Seater Sofa</b></p>
