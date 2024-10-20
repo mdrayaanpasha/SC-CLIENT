@@ -870,7 +870,7 @@ loading="lazy"
                     <div key={index} class="card" style={{width: "18rem"}} onClick={e=>gotoPage(ele.Sku)}>
                   
                     <img 
-                    src={`https://api-sc-pgsn.onrender.com/public/img/${mainProduct[0]["Product Category"]}/${ele["Sub Category"]}/${ele.Sku}/main.jpg`}
+                    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0]["Product Category"]}/${ele["Sub Category"]}/${ele.Sku}/main.jpg`}
                     alt={ele.Sku}  class="card-img-top"
                     loading="lazy"
                     />
