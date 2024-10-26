@@ -53,7 +53,7 @@ function StorageBench() {
                     data.map((ele, index) => (
                         <div key={index} className="card" style={{ width: "18rem" }} onClick={e => window.location.href = `/sfs?sku=${ele.Sku}`}>
                             <img
-                                src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${ele["Sub Category"].replace(' ', '%20')}/${ele["Sku"]}/main.jpg`}
+                                src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/${ele["Sub Category"].replace(' ', '%20')}/${ele["Sku"]}/main.jpg`}
                                 alt={ele.Title}
                                 loading="lazy"
                                 className="card-img-top"

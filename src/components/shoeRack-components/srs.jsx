@@ -298,7 +298,7 @@ function SR() {
                     <div key={index}>
                       <img
                         className={ele === sku ? "main-img" : "other-img"}
-                        src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/${mainProduct[0]["Sub Category"]}/${ele}/main.jpg`}
+                        src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/SR/${mainProduct[0]["Sub Category"]}/${ele}/main.jpg`}
                         alt={ele}
                         onClick={(e) => setSku(ele.replace(" ", ""))}
                         loading="lazy"
@@ -406,7 +406,7 @@ function SR() {
                 onClick={(e) => gotoPage(ele.Sku)}
               >
                 <img
-                  src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0]["Product Category"]}/${ele["Sub Category"]}/${ele.Sku}/main.jpg`}
+                  src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/${mainProduct[0]["Product Category"]}/${ele["Sub Category"]}/${ele.Sku}/main.jpg`}
                   alt={ele.Sku}
                   class="card-img-top"
                   loading="lazy"

@@ -61,7 +61,7 @@ function Seat3() {
               onClick={() => (window.location.href = `/sfs?sku=${ele.Sku}`)}
             >
               <img
-                src={`https://api-sc-pgsn.onrender.com/public/img/sofa/${ele[
+                src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/${ele[
                   "Sub Category"
                 ].replace(" ", "%20")}/${ele["Sku"]}/main.jpg`}
                 alt={ele.Title}

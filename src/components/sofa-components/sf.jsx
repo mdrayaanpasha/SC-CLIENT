@@ -199,7 +199,7 @@ function Sf() {
           <center>
             <img
               class="di-main-img"
-              src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0][
+              src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/${mainProduct[0][
                 "Product Category"
               ].toLowerCase()}/${
                 mainProduct[0]["Sub Category"]
@@ -211,7 +211,7 @@ function Sf() {
             <div className="flex-dia">
               {productImgs.map((ele) => (
                 <img
-                  src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0][
+                  src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/${mainProduct[0][
                     "Product Category"
                   ].toLowerCase()}/${
                     mainProduct[0]["Sub Category"]
@@ -237,7 +237,7 @@ function Sf() {
               <div className="otherimgs">
                 {productImgs.map((ele) => (
                   <img
-                    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0][
+                    src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/${mainProduct[0][
                       "Product Category"
                     ].toLowerCase()}/${
                       mainProduct[0]["Sub Category"]
@@ -256,7 +256,7 @@ function Sf() {
                 </button>
 
                 <img
-                  src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0][
+                  src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/${mainProduct[0][
                     "Product Category"
                   ].toLowerCase()}/${
                     mainProduct[0]["Sub Category"]
@@ -311,7 +311,7 @@ function Sf() {
                     <div key={index}>
                       <img
                         className={ele === sku ? "main-img" : "other-img"}
-                        src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0][
+                        src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/${mainProduct[0][
                           "Product Category"
                         ].toLowerCase()}/${
                           mainProduct[0]["Sub Category"]
@@ -335,7 +335,7 @@ function Sf() {
                 <div key={index}>
                   <img
                     className={ele === sku ? "main-img" : "other-img"}
-                    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0][
+                    src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/${mainProduct[0][
                       "Product Category"
                     ].toLowerCase()}/${
                       mainProduct[0]["Sub Category"]
@@ -450,7 +450,7 @@ function Sf() {
                 onClick={(e) => (window.location.href = `/sfs?sku=${ele.Sku}`)}
               >
                 <img
-                  src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${mainProduct[0][
+                  src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/${mainProduct[0][
                     "Product Category"
                   ].toLowerCase()}/${ele["Sub Category"]}/${ele.Sku}/main.jpg`}
                   alt={ele.Sku}

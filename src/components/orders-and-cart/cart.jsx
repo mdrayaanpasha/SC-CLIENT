@@ -214,7 +214,7 @@ function Cart() {
             Data.map((ele) => (
               <div key={ele.Sku} className="flex">
                 <img
-                  src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${
+                  src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/${
                     ele["Product Category"] === "Sofa" ? "sofa" : "SR"
                   }/${ele["Sub Category"]}/${ele["Sku"]}/main.jpg`}
                   alt="Product"

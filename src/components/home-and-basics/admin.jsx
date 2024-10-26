@@ -158,7 +158,7 @@ function Admin() {
                   <td>{order["Costumer Id"]}</td>
                   <td>{order["Costumer Adress"]}</td>
                   <td><img 
-                    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${order["Product Type"] === "Sofa" ? "sofa" : order["Product Type"].toUpperCase() }/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
+                    src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/${order["Product Type"] === "Sofa" ? "sofa" : order["Product Type"].toUpperCase() }/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
                     alt="" 
                     loading="lazy"
                     /></td>
@@ -212,7 +212,7 @@ function Admin() {
                   <td>{order["Costumer Adress"]}</td>
                   <td>{order["Product Name"]}</td>
                   <td><img 
-                    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${order["Product Type"] === "Sofa" ? "sofa" : order["Product Type"].toUpperCase() }/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
+                    src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/${order["Product Type"] === "Sofa" ? "sofa" : order["Product Type"].toUpperCase() }/${order["Product Sub-Type"]}/${order["Product Sku"]}/main.jpg`} 
                     alt="" 
                     loading="lazy"
                     /></td>

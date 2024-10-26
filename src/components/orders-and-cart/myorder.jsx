@@ -77,7 +77,7 @@ function MyOrder() {
             return (
               <div key={ele["Order Id"]} className="Product-card">
                 <img
-                  src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/${
+                  src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/${
                     ele["Product Type"] === "Sofa"
                       ? "sofa"
                       : ele["Product Type"].toUpperCase()

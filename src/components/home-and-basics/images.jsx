@@ -65,7 +65,7 @@ function Images() {
               <center>
                 <div className="main">
                   <img
-                    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${info["Sub Category"]}/${sku}/${selected}`}
+                    src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/${info["Sub Category"]}/${sku}/${selected}`}
                     loading="lazy"
                     alt="this"
                   />
@@ -73,7 +73,7 @@ function Images() {
               </center>
               <div className="other">
                 <img
-                  src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${info["Sub Category"]}/${sku}/main.jpg`}
+                  src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/${info["Sub Category"]}/${sku}/main.jpg`}
                   className={
                     `/main.jpg` === selected ? "selected" : "notselected"
                   }
@@ -83,7 +83,7 @@ function Images() {
                 {imgPaths.map((ele, index) => (
                   <img
                     key={index}
-                    src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/${info["Sub Category"]}/${sku}/${ele}`}
+                    src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/${info["Sub Category"]}/${sku}/${ele}`}
                     className={
                       `/${ele}` === selected ? "selected" : "notselected"
                     }

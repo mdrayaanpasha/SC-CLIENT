@@ -213,7 +213,7 @@ function Home() {
         <div className="card" style={{ width: "18rem" }}>
           <img
             className="thing"
-            src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/3%20Seater%20Sofa/SCSO23003PH/main.jpg"
+            src="https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/3%20Seater%20Sofa/SCSO23003PH/main.jpg"
             loading="lazy"
             alt="SCSO23003PH"
             onClick={() => (window.location.href = "./sfs?sku=SCSO23003PH")}
@@ -223,7 +223,7 @@ function Home() {
         <div className="card" style={{ width: "18rem" }}>
           <img
             className="thing"
-            src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/L%20Shape%20Sofa/SCSO240001/main.jpg"
+            src="https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/L%20Shape%20Sofa/SCSO240001/main.jpg"
             loading="lazy"
             alt="SCSO240001"
             onClick={() => (window.location.href = "./sfs?sku=SCSO240001")}
@@ -233,7 +233,7 @@ function Home() {
         <div className="card" style={{ width: "18rem" }}>
           <img
             className="thing"
-            src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/3%20Seater%20Sofa/SCSO23005BL/main.jpg"
+            src="https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/3%20Seater%20Sofa/SCSO23005BL/main.jpg"
             loading="lazy"
             alt="SCSO23005BL"
             onClick={() => (window.location.href = "./sfs?sku=SCSO23005BL")}
@@ -243,7 +243,7 @@ function Home() {
         <div className="card" style={{ width: "18rem" }}>
           <img
             className="thing"
-            src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/Lounge%20Chair/SCWCS23002BL/main.jpg"
+            src="https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/Lounge%20Chair/SCWCS23002BL/main.jpg"
             loading="lazy"
             alt="SCWCS23002BL"
             onClick={() => (window.location.href = "./sr?sku=SCWCS23002BL")}
@@ -253,7 +253,7 @@ function Home() {
         <div className="card" style={{ width: "18rem" }}>
           <img
             className="thing"
-            src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/Dresser/SCDR23001TN/main.jpg"
+            src="https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/SR/Dresser/SCDR23001TN/main.jpg"
             loading="lazy"
             alt="SCDR23001TN"
             onClick={() => (window.location.href = "./sr?sku=SCDR23001TN")}
@@ -263,7 +263,7 @@ function Home() {
         <div className="card" style={{ width: "18rem" }}>
           <img
             className="thing"
-            src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/Shoe%20Cabinet/SCSR0001RWN/main.jpg`}
+            src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/SR/Shoe%20Cabinet/SCSR0001RWN/main.jpg`}
             alt={"SCRSR001WN"}
             onClick={(e) =>
               (window.location.href = window.location.href =
@@ -276,7 +276,7 @@ function Home() {
         <div className="card" style={{ width: "18rem" }}>
           <img
             className="thing"
-            src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/Shoe%20Cabinet/NSSSR0018TN/main.jpg`}
+            src={`https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/SR/Shoe%20Cabinet/NSSSR0018TN/main.jpg`}
             loading="lazy"
             alt="NSSSR0018TN"
             onClick={(e) => (window.location.href = "./sr?sku=NSSSR0018TN")}
@@ -285,7 +285,7 @@ function Home() {
         <div className="card" style={{ width: "18rem" }}>
           <img
             className="thing"
-            src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/Shoe%20Cabinet%20with%20Seat/NSSSR0018STN/main.jpg"
+            src="https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/SR/Shoe%20Cabinet%20with%20Seat/NSSSR0018STN/main.jpg"
             loading="lazy"
             alt="NSSSR0018STN"
             onClick={() => (window.location.href = "./sr?sku=NSSSR0018STN")}
@@ -295,7 +295,7 @@ function Home() {
         <div className="card" style={{ width: "18rem" }}>
           <img
             className="thing"
-            src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/Shoe%20Cabinet%20Bench/SCSR23004CW/main.jpg"
+            src="https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/SR/Shoe%20Cabinet%20Bench/SCSR23004CW/main.jpg"
             loading="lazy"
             alt="SCSR23004CW"
             onClick={() => (window.location.href = "./sr?sku=SCSR23004CW")}
@@ -379,7 +379,7 @@ function Home() {
           onClick={(e) => (window.location.href = "/sfs?sku=SCSO240001")}
         >
           <img
-            src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/L%20Shape%20Sofa/SCSO240001/main.jpg"
+            src="https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/L%20Shape%20Sofa/SCSO240001/main.jpg"
             className="card-img-top"
             alt="..."
             loading="lazy"
@@ -406,7 +406,7 @@ function Home() {
           }
         >
           <img
-            src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/3%20Seater%20Sofa/SCSO23003BL/main.jpg"
+            src="https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/3%20Seater%20Sofa/SCSO23003BL/main.jpg"
             loading="lazy"
             className="card-img-top"
             alt="..."
@@ -433,7 +433,7 @@ function Home() {
           }
         >
           <img
-            src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/L%20Shape%20Sofa/SCSO240003/main.jpg"
+            src="https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/L%20Shape%20Sofa/SCSO240003/main.jpg"
             loading="lazy"
             className="card-img-top"
             alt="..."
@@ -460,7 +460,7 @@ function Home() {
           }
         >
           <img
-            src="https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/sofa/3%20Seater%20Sofa/SCSO240008CGY/main.JPG"
+            src="https://raw.githubusercontent.com/mdrayaanpasha/sc-api/main/public/img/sofa/3%20Seater%20Sofa/SCSO240008CGY/main.JPG"
             loading="lazy"
             className="card-img-top"
             alt="..."
