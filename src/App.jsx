@@ -1,42 +1,57 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./home";
-import Register from "./register";
-import Images from "./images";
-import Sofas from "./sofas";
-import Login from "./login";
-import Cart from "./cart";
-import Seat3 from "./3seater";
-import Seat2 from "./2seater";
-import Lshaped from "./lshaped";
-import Seat1 from "./1seater";
-import StorageBench from "./1-storagebench";
 
-import ShoeRacks from "./shoeracks";
-import SeatSR from "./sr-seat";
-import BenchSR from "./sr-bench";
-import CabSR from "./sr-cabinet";
+
+
+//home-and-basics:
+import Home from "./components/home-and-basics/home";
+import Images from "./components/home-and-basics/images";
+import Admin from "./components/home-and-basics/admin";
+
+
+//auth:
+import Login from "./components/auth/login";
+import Register from "./components/auth/register";
+
+
+//orders-and-cart:
+import Cart from "./components/orders-and-cart/cart";
+import Order from "./components/orders-and-cart/order";
+import Sucess from "./components/orders-and-cart/sucess";
+import Failed from "./components/orders-and-cart/failed";
+import MyOrder from "./components/orders-and-cart/myorder";
+import Payments from "./components/orders-and-cart/payments";
+import OrderFail from "./components/orders-and-cart/orderfail";
+
+//sofa-components
+import Sofas from "./components/sofa-components/sofas";
+import Seat1 from "./components/sofa-components/1seater";
+import Seat3 from "./components/sofa-components/3seater";
+import Seat2 from "./components/sofa-components/2seater";
+import Lshaped from "./components/sofa-components/lshaped";
+import Sf from "./components/sofa-components/sf";
+
+//shoeRack-component
+import StorageBench from "./components/shoeRack-components/1-storagebench";
+import ShoeRacks from "./components/shoeRack-components/shoeracks";
+import SeatSR from "./components/shoeRack-components/sr-seat";
+import BenchSR from "./components/shoeRack-components/sr-bench";
+import CabSR from "./components/shoeRack-components/sr-cabinet";
+import SR from "./components/shoeRack-components/srs";
+
+
+//importing common modules.
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import Spotlights from "./spotlights";
-import Sf from "../sf";
-import SR from "./srs";
-import Check from "./check";
-import Order from "./order"
-import Sucess from "./sucess";
-import Failed from "./failed";
-import Admin from "./admin";
-import MyOrder from "./myorder";
-import Payments from "./payments";
-import OrderFail from "./orderfail";
+import { compile } from "sass";
+
+
 function App() {
   return (
     <Router >
       <Routes>
 
-        <Route path="/check" element={<Check />} />
         <Route path="/" element={<Home />} />
-        <Route path="/spotlights" element={<Spotlights />} />
         <Route path="/sofaimg" element={<Images />} />
         <Route path="/sofas" element={<Sofas />} />
         <Route path="/sfs" element={<Sf />} />
