@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
 //components
@@ -13,15 +13,19 @@ import "../../assets/css/product-pages.css";
 
 function ShoeRacks() {
   const [shoeRacks, setShoeRacks] = useState(null);
+  const hasFetchedRef = useRef(false); // Ref to track if data has been fetched
 
   useEffect(() => {
     const fetchData = async () => {
+      if (hasFetchedRef.current) return; // Prevent fetching if already done
+
       try {
         const response = await axios.get(
           "https://api-sc-pgsn.onrender.com/ShoeRacksget"
         );
         if (response.data.message === "ok") {
           setShoeRacks(response.data.D);
+          hasFetchedRef.current = true; // Mark as fetched
         } else {
           alert("There was some error in backend!");
         }
@@ -60,7 +64,7 @@ function ShoeRacks() {
           <img
             src={Cab}
             alt=""
-            onClick={(e) => (window.location.href = "/shoeracks/cabinet")}
+            onClick={() => (window.location.href = "/shoeracks/cabinet")}
             loading="lazy"
           />
           <center>
@@ -69,7 +73,7 @@ function ShoeRacks() {
         </div>
         <div
           className="cat"
-          onClick={(e) => (window.location.href = "/shoeracks/bench")}
+          onClick={() => (window.location.href = "/shoeracks/bench")}
         >
           <img src={Bench} alt="" loading="lazy" />
           <center>
@@ -78,7 +82,7 @@ function ShoeRacks() {
         </div>
         <div
           className="cat"
-          onClick={(e) => (window.location.href = "/shoeracks/seat")}
+          onClick={() => (window.location.href = "/shoeracks/seat")}
         >
           <img src={Seat} alt="" loading="lazy" />
           <center>
@@ -96,12 +100,10 @@ function ShoeRacks() {
                 key={index}
                 className="card"
                 style={{ width: "18rem" }}
-                onClick={(e) => se(ele.Sku)}
+                onClick={() => se(ele.Sku)}
               >
                 <img
-                  src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/${ele[
-                    "Sub Category"
-                  ].replace(" ", "%20")}/${ele["Sku"]}/main.jpg`}
+                  src={`https://raw.githubusercontent.com/mdrayaanpasha/api-sc/main/public/img/SR/${ele["Sub Category"].replace(" ", "%20")}/${ele["Sku"]}/main.jpg`}
                   alt={ele.Title}
                   className="card-img-top"
                   loading="lazy"
@@ -112,9 +114,9 @@ function ShoeRacks() {
                   <hr />
                   <p className="card-text">
                     <s style={{ color: "silver" }}>
-                      {formatter.format(ele["Mrp "])}
+                      {formatter.format(ele["Mrp "] || 0)}
                     </s>{" "}
-                    {formatter.format(ele["Selling Price "])}{" "}
+                    {formatter.format(ele["Selling Price "] || 0)}{" "}
                     <span style={{ color: "green" }}>Save 25%</span>
                   </p>
                 </div>
@@ -122,15 +124,7 @@ function ShoeRacks() {
             ))}
           </div>
         ) : (
-          <>
-            <center>
-              <h2>Loading.......</h2>
-              <small>
-                Did you know that, the first pieces of furniture were made from
-                animal hides
-              </small>
-            </center>
-          </>
+          <LoadingComponent />
         )}
       </div>
     </>
