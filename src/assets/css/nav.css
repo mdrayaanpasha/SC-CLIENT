@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+nav img {
+    height:10vh;
+}
+body{
+    background-color: #f8f7f2;
+    font-family: "Poppins", sans-serif;
+}
+nav {
+    color:white !important;
+    display: flex;
+    justify-content: space-around !important;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2vw;
+    background: rgba(255, 255, 255, 0.2);
+   /* Semi-transparent background */
+    backdrop-filter: blur(10px);
+   /* Glass effect */
+    -webkit-backdrop-filter: blur(10px);
+   /* For Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+   /* Optional: border to enhance glass effect */
+    border-radius: 10px;
+   /* Optional: rounded corners */
+    margin: 10px;
+   /* Optional: space around the nav */
+    position: relative;
+   /* Ensure proper positioning */
+    z-index: 1;
+   /* Ensure it stays above other elements */
+}
+/* WebKit (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+    width: 8px;
+   /* Adjust the width as needed */
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+   /* color of the track */
+}
+::-webkit-scrollbar-thumb {
+    background: #6F698A;
+   /* color of the thumb */
+    border-radius: 6px;
+   /* roundness of the thumb */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: darkblue 
+   /* color of the thumb on hover */
+}
+.navbar{
+    background-color: rgba(248, 247, 242, 0.5) !important;
+}

@@ -1,7 +1,7 @@
-import Nav from "../non-routed-comps/nav"
+import Nav from "../non-routed-comps/nav";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import LoadingComponent from "../non-routed-comps/loadingComp"
+import LoadingComponent from "../non-routed-comps/loadingComp";
 function SR() {
     const searchParams = new URLSearchParams(location.search);
     const [sku, setSku] = useState(searchParams.get("sku"));
@@ -571,11 +571,14 @@ function SR() {
                     height:10vh;
                     width:auto;
                 }
+                    
 
                     }
 
 
-                        
+                 .otherimgs{
+                        flex-direction:column !important;
+                    }       
                 `}
             </style>
             <Nav />
@@ -935,7 +938,19 @@ loading="lazy"
                        
                 }
                
-               
+               .otherimgs{
+               display:flex !important;
+               align-items:center !important;
+               justify-content:space-evenly !important;
+               flex-direction:column !important;
+
+               }
+               .carousel{
+               width:35vw;
+               }
+               .carousel img{
+                width:35vw;
+               }
                 
                 `}
             </style>

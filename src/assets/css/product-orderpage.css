@@ -1,0 +1,326 @@
+body {
+    overflow-x: hidden;
+}
+
+.product-information p,
+.product-information ul {
+    max-width: 50vw;
+    word-break: break-word;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-item,
+.carousel-item img {
+    height: 100vh;
+    width: 35vw;
+    object-fit: contain;
+    padding: 0;
+    position: sticky;
+    top: 10vh;
+    margin-bottom: 5vh;
+}
+
+.flex-product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.fa-star.checked {
+    color: orange;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.main-img,
+.other-img {
+    height: 15vh;
+    width: 7vw;
+    margin-right: 2vw;
+    border-radius: 1vw;
+    padding: 0.2vw;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-information {
+    margin-top: 10vh;
+}
+
+.card {
+    margin-top: 5vh;
+    background-color: #F3F2ED;
+}
+
+.other-product:hover {
+    cursor: pointer;
+}
+
+.s {
+    color: silver;
+}
+
+.main-img:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px lightblue;
+}
+
+.dialog {
+    padding: 2vw;
+    border: none;
+    border-radius: 2vw;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+dialog button {
+    font-size: 5vh;
+    background-color: transparent;
+}
+
+/* Media Queries */
+@media (max-width: 1500px) {
+    .otherimgs img {
+        width: 10vw;
+    }
+}
+
+@media (max-width: 1200px) {
+    .product-information p,
+    .product-information ul {
+        max-width: 30vw;
+    }
+    .main-img,
+    .other-img {
+        width: 10vw;
+        margin-top: 2vh;
+    }
+}
+
+@media (max-width: 1000px) {
+    .product-information p,
+    .product-information ul {
+        max-width: 40vw;
+    }
+    .products {
+        display: block;
+        margin: 0;
+    }
+    .carousel,
+    .carousel-inner,
+    .carousel-item,
+    .carousel-item img {
+        height: 70vh;
+        width: 100vw;
+    }
+    .banner {
+        display: none;
+    }
+    .similar-products {
+        margin-top: 90vh;
+    }
+    .main-img,
+    .other-img {
+        height: 15vh;
+        width: 15vw;
+        margin-top: 2vh;
+    }
+}
+
+@media (max-width: 780px) {
+    .similar-products {
+        margin-right: 5vw;
+        margin-left: 5vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-img,
+    .other-img {
+        height: 15vh;
+        width: 20vw;
+    }
+    .similar-products {
+        margin-right: 0;
+        margin-left: 2vw;
+    }
+    .flex-dia img {
+        height: 10vh;
+        width: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .similar-products {
+        margin-right: 5vw;
+        margin-left: 5vw;
+    }
+}
+
+@media (max-width: 400px) {
+    .products {
+        display: block;
+        margin: 0;
+    }
+    .carousel,
+    .carousel-inner,
+    .carousel-item,
+    .carousel-item img {
+        height: 40vh;
+        width: 100vw;
+    }
+    .other {
+        width: 100vw;
+    }
+    .block {
+        margin: 0;
+    }
+    .main-img,
+    .other-img {
+        height: 15vh;
+        width: 30vw;
+    }
+    .banner {
+        display: none;
+    }
+    .description {
+        padding: 1vw;
+    }
+    .flex-around {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .flex-dia {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        overflow: auto;
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow-x: auto;
+    height: 80vh;
+    width: 100vw;
+    position: relative;
+}
+
+.other-product,
+.card {
+    flex: 0 0 auto;
+    margin-left: 5vw;
+    background-color: #F8F7F2;
+    border: none;
+}
+
+.card:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+        0 4px 6px rgba(0, 0, 0, 0.16),
+        0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.otherp-info {
+    padding: 1vw;
+}
+
+.flex-dia img {
+    width: 7vw;
+    object-fit: contain;
+    border-radius: 1vw;
+}
+
+.di-main-img {
+    height: 70vh;
+    object-contain: fit;
+    padding: 1vw;
+    border-radius: 1vw !important;
+}
+
+.carousel-next,
+.carousel-prev {
+    position: absolute;
+    padding: 1vw;
+    font-size: 5vh;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 1vw;
+    z-index: 9;
+}
+
+.carousel-next {
+    right: 0;
+    top: 45%;
+}
+
+.carousel-prev {
+    left: 0;
+    top: 45%;
+}
+
+.carousel-no {
+    position: absolute;
+}
+
+.b {
+    padding: 0.2vw;
+    width: 44vw;
+    background-color: green;
+    border-radius: 0.3vw;
+    font-weight: bold;
+}
+
+.b-1 {
+    background-color: #F8F7F2;
+    color: #655F7F;
+    border: 2px solid #655F7F;
+}
+
+.b-1:hover {
+    background-color: #655F7F;
+    color: #F8F7F2;
+}
+
+.b-2 {
+    background-color: #655F7F;
+    color: #F8F7F2;
+}
+
+.b-2:hover {
+    background-color: #F8F7F2;
+    color: #655F7F;
+}
+
+@media (max-width: 900px) {
+    button {
+        padding: 1.8vw;
+    }
+}
+
+@media (max-width: 700px) {
+    button {
+        padding: 2vw;
+        height: 5vh;
+    }
+    .navbar {
+        width: 99vw;
+        padding: 0;
+    }
+    .container-fluid {
+        width: 100%;
+    }
+}

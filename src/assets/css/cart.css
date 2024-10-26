@@ -1,0 +1,156 @@
+.products{
+    width:70vw;
+    margin-left:2vw;
+    margin-top:2vw;
+    border-radius:1vw;
+}
+.flex{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    width:100%;
+    margin-bottom:5vw;
+    padding:2vw;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius:1vw;
+}
+.flex-d{
+    display:flex;
+    justify-content:space-around;
+}
+.flex img{
+    height:20vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 1vw ;
+}
+.flex input{
+    text-align:center;
+    border:none;
+    background-color:#f8f7f2;
+}
+.flex button{
+    margin:1vw;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.order-sum {
+    margin-top: 5vh;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 2vw;
+    height: 50%;
+    border-radius: 1vw;
+    position: sticky;
+    top: 10vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+hr{
+    color:#655F7F;
+}
+.theme{
+    color: #655F7F;
+}
+.theme-b{
+    background-color: #655F7F;
+    color:white;
+    font-weight:bold;
+    box-shadow:5px 5px 15px #655F7F;
+}
+.icon{
+    cursor:pointer;
+    color:#DC3545;
+}
+.div1{
+    margin-left:35%;
+}
+.div1 img{
+    height:40vh;
+    width:20vw;
+}
+@media(max-width:1000px){
+    .div1 img{
+        width:25vw;
+   }
+}
+@media(max-width:800px){
+    .div1{
+        margin-left:55%;
+        width:30vw;
+   }
+    .div1 img{
+        width:30vw;
+   }
+}
+@media(max-width:400px){
+    .div1{
+        margin-top:5vh;
+   }
+    .div1 img{
+        height:20vh;
+        width:50vw;
+   }
+}
+.div1{
+    margin-left:35%;
+}
+.div1 img{
+    height:40vh;
+    width:20vw;
+}
+@media(max-width:1000px){
+    .div1 img{
+        width:25vw;
+   }
+}
+@media(max-width:800px){
+    .div1{
+        margin-left:55%;
+        width:30vw;
+   }
+    .div1 img{
+        width:30vw;
+   }
+}
+@media(max-width:400px){
+    .div1{
+        margin-top:5vh;
+   }
+    .div1 img{
+        height:20vh;
+        width:50vw;
+   }
+}
+@media(max-width:900px){
+    .flex{
+        width:80%;
+   }
+    .order-sum{
+        right:10%;
+   }
+}
+@media(max-width:800px){
+    .flex{
+        width:100%;
+        margin-left:20%;
+   }
+    .flex-d{
+        display:block;
+   }
+}
+@media(max-width:600px){
+    .flex{
+        margin-left:2%;
+        width:130%;
+   }
+}
+@media(max-width:450px){
+    .flex img{
+        height:15vh;
+        width:25vw;
+   }
+    .flex{
+        width:140%;
+        margin-left:0%;
+   }
+    .flex input{
+        width:10vw;
+   }
+}

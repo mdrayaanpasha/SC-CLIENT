@@ -1,0 +1,36 @@
+.flex{
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+    align-items:center;
+    margin-top:vh;
+}
+.other{
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+}
+.other img{
+    height:15vh;
+    margin:2vh;
+}
+.main img{
+    height:70vh;
+    border:3px solid #6F698A;
+    border-radius:0.2vw;
+    padding:0.5vw;
+    object-fit: contain;
+}
+.selected,.notselected{
+    border-radius:0.2vw;
+    padding:0.1vw;
+}
+.selected{
+    border:3px solid #6F698A;
+}
+.cross{
+    display:flex;
+    justify-content:right;
+    font-size:30px;
+    cursor:pointer;
+}
