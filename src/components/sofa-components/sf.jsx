@@ -1158,6 +1158,19 @@ function Sf() {
                     display:none;
                     }
               }
+                      .otherimgs{
+               display:flex !important;
+               align-items:center !important;
+               justify-content:space-evenly !important;
+               flex-direction:column !important;
+
+               }
+               .carousel{
+               width:35vw;
+               }
+               .carousel img{
+                width:35vw;
+               }
                 `}
             </style>
 
