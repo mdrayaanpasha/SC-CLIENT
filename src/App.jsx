@@ -50,31 +50,43 @@ function App() {
   return (
     <Router >
       <Routes>
-
+        {/* home-and-basics: */}
         <Route path="/" element={<Home />} />
-        <Route path="/sofaimg" element={<Images />} />
-        <Route path="/sofas" element={<Sofas />} />
-        <Route path="/sfs" element={<Sf />} />
-        <Route path="/sofas/3Seater" element={<Seat3 />} />
-        <Route path="/sofas/2Seater" element={<Seat2 />} />
+        <Route path="/X_MIN_DASH" element={<Admin/>}></Route>
+
+
+        {/* sofa-routes  */}
+        <Route path="/sfs" element={<Sf />} /> 
+        <Route path="/sofas" element={<Sofas /> } />
         <Route path="/sofas/1Seater" element={<Seat1 />} />
+        <Route path="/sofas/2Seater" element={<Seat2 />} />
+        <Route path="/sofas/3Seater" element={<Seat3 />} />
         <Route path="/sofas/LShaped" element={<Lshaped />} />
         <Route path="/sofas/storageBench" element={<StorageBench />} />
-        <Route path="/shoeracks" element={<ShoeRacks />} />
+        <Route path="/sofaimg" element={<Images />} />
+
+        {/* shoeracks */}
         <Route path="/sr" element={<SR />} />
+        <Route path="/shoeracks" element={<ShoeRacks />} />
         <Route path="/shoeracks/seat" element={<SeatSR />} />
         <Route path="/shoeracks/bench" element={<BenchSR />} />
         <Route path="/shoeracks/cabinet" element={<CabSR />} />
+        
+        {/* auth */}
         <Route path="/reg" element={<Register />} />
         <Route path="/login" element={<Login />} />
+
+
+        {/* order & cart  */}
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<Order />} />
         <Route path="/success" element={<Sucess />} />
         <Route path="/failed" element={<Failed />} />
-        <Route path="/X_MIN_DASH" element={<Admin/>}></Route>
         <Route path="/myorders" element={<MyOrder/>}></Route>
         <Route path="/pay" element={<Payments/>}></Route>
         <Route path="/order-fail" element={<OrderFail/>}></Route>
+
+
       </Routes>
     </Router>
   );
