@@ -497,3 +497,10 @@ dialog button{
 .otherimgs{
     flex-direction:column !important;
 }
+.flex-container-c{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    overflow:auto;
+}
